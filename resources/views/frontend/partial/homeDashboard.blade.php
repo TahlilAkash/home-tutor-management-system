@@ -8,7 +8,7 @@
             @if (auth('member')->check())
                 <form action="{{route('subject.search')}}" method="get">
                     <input type="text" class="form-control mt-1" style="width: 200px; display: inline-block;" placeholder="Search by subject.." name="search">
-                    <button type="submit" class="btn btn-success" style="border: 2px solid green; background-color: green; color: white;">Search</button>
+                    <button            button type="submit" class="btn btn-success" style="border: 2px solid green; background-color: green; color: white;">Search</button>
                 </form>
              @endif
              <!-- end search form only when logged in -->

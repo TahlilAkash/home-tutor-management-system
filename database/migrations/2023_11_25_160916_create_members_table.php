@@ -25,10 +25,18 @@ return new class extends Migration
             $table->timestamps();
             
             
-            // for ssl need two column
+            // for ssl need two column // it is attached with Buy premium controller
             
             $table->string('member_subscription')->nullable();
+            $table->string('tran_id')->nullable()->unique();
             $table->integer('limit')->nullable();
+            $table->string('amount')->nullable();
+            
+            $table->string('status')->nullable();
+
+
+
+
 
         });
     }

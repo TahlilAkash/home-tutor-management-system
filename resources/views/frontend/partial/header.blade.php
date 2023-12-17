@@ -4,13 +4,14 @@
         <div class="row align-items-center position-relative">
             <div class="col-3">
                 <div class="site-logo">
-                    <a href="#"><strong>HTMS</strong></a>
+                    <strong>HTMS</strong>
                 </div>
             </div>
 
             <div class="col-9  text-right">
                 <span class="d-inline-block d-lg-none"><a href="#" class=" site-menu-toggle js-menu-toggle py-5 "><span class="icon-menu h3 text-black"></span></a></span>
                 <nav class="site-navigation text-right ml-auto d-none d-lg-block" role="navigation">
+
                     <ul class="site-menu main-menu js-clone-nav ml-auto ">
                         
                         <li><a href="{{route('home')}}" class="nav-link">Home</a></li>
