@@ -79,7 +79,7 @@ Route::group(['middleware'=>'frontendAuth'],function(){
     // search option
     Route::get('/search-subject',[FrontendHomeController::class,'search'])->name('subject.search'); // header blade e serach from
     
-   
+   // Buy premium post
     Route::get('/buy-premium',[BuyPremiumController::class, 'buyPremium'])->name('buyPremium.post');
     Route::get('/buy/subscription/{id}',[BuyPremiumController::class, 'subscriptionPurchase'])->name('buy.subscription');
 

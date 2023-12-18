@@ -193,7 +193,11 @@ class SslCommerzPaymentController extends Controller
                 ]);
                 // dd($order_details->status);
 
-                echo "<br >Transaction is successfully Completed";
+                // echo "<br >Transaction is successfully Completed"; // ami change krsi
+                notify()->success('Payment Successful');
+                return redirect()->route('home');
+
+
             }
             // dd('bye');
         } else if ($order_details->status == 'Processing' || $order_details->status == 'confirm') {

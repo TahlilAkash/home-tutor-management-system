@@ -15,47 +15,75 @@
                     <ul class="site-menu main-menu js-clone-nav ml-auto ">
                         
                         <li><a href="{{route('home')}}" class="nav-link">Home</a></li>
-
-                        {{-- Buy preemum --}}
+                                {{-- Buy premium --}}
+                                {{-- @if (auth('member')->user())
+                
+                
+                                            <li><a href="">{{auth('member')->user()->name }} | {{auth('member')->user()->role}}</a></li>
+                                            <li> <a href="{{route('profile.view')}}" class="nav-link">My Profile</a></li>
+                                                
+                                            @php
+                                                $tutionPostCount = \App\Models\TuitionPost::where('user_id', auth('member')->user()->id)->count();
+                                            @endphp
+                                        
+                                            @if ($tutionPostCount < 3)
+                                                        @if (auth('member')->user()->role == 'teacher')
+                                                            <li><a href="{{ route('teacher.create.tuition.post') }}" class="nav-link">Create Tuition</a></li>
+                                                        @else
+                                                            <li><a href="{{ route('student.create.tuition.post') }}" class="nav-link">Need Tutor</a></li>
+                                                        @endif 
+                                                @else   
+                                                    <li><a href="{{route('buyPremium.post')}}" class="nav-link">Buy Premium</a></li>
+                                                    
+                                            @endif
+                                            
+                                            <li><a href="{{route('member.logout')}}" class="nav-link">Log Out</a></li>
+                                        @else
+                                        
+                                        <li><a href="{{route('member.login')}}" class="nav-link">Login</a></li>
+                                        <li><a href="{{route('member.registration')}}" class="nav-link">Registration</a></li>
+                                @endif --}}
+                                {{--  --}}                    
                         @if (auth('member')->user())
-          
-        
-                               <li><a href="">{{auth('member')->user()->name }} | {{auth('member')->user()->role}}</a></li>
-                               <li> <a href="{{route('profile.view')}}" class="nav-link">My Profile</a></li>
-                                
-                            @php
-                                $tutionPostCount = \App\Models\TuitionPost::where('user_id', auth('member')->user()->id)->count();
-                            @endphp
-                           
-                           @if ($tutionPostCount < 3)
+                                    <li><a href="">{{ auth('member')->user()->name }} | {{ auth('member')->user()->role }}</a></li>
+                                    <li><a href="{{ route('profile.view') }}" class="nav-link">My Profile</a></li>
+
+                                    @php
+                                        $tutionPostCount = \App\Models\TuitionPost::where('user_id', auth('member')->user()->id)->count();
+                                    @endphp
+
+                            @if (auth('member')->user()->status == 'confirm')
+                                    {{-- Show create post links based on the user's role --}}
                                     @if (auth('member')->user()->role == 'teacher')
                                         <li><a href="{{ route('teacher.create.tuition.post') }}" class="nav-link">Create Tuition</a></li>
                                     @else
                                         <li><a href="{{ route('student.create.tuition.post') }}" class="nav-link">Need Tutor</a></li>
-                                    @endif 
-                           @else
-                               <li><a href="{{route('buyPremium.post')}}" class="nav-link">Buy Premium</a></li>
-                           @endif
-                           
-                                
-                                
-                               <li><a href="{{route('member.logout')}}" class="nav-link">Log Out</a></li>
-                        
-                        @else
-                          
-                      <li><a href="{{route('member.login')}}" class="nav-link">Login</a></li>
-                      <li><a href="{{route('member.registration')}}" class="nav-link">Registration</a></li>
-                      @endif
-                        {{--  --}}
-                       
-                       
-                        
-                        
+                                    @endif
+                                @else
+                                    {{-- Check the number of tuition posts --}}
+                                    @if ($tutionPostCount < 3)
+                                        {{-- Show create post links based on the user's role --}}
+                                        @if (auth('member')->user()->role == 'teacher')
+                                            <li><a href="{{ route('teacher.create.tuition.post') }}" class="nav-link">Create Tuition</a></li>
+                                        @else
+                                            <li><a href="{{ route('student.create.tuition.post') }}" class="nav-link">Need Tutor</a></li>
+                                        @endif
+                                    @else
+                                        {{-- Show "Buy Premium" link --}}
+                                        <li><a href="{{ route('buyPremium.post') }}" class="nav-link">Buy Premium</a></li>
+                                    @endif
+                            @endif
 
-                       
+                            <li><a href="{{ route('member.logout') }}" class="nav-link">Log Out</a></li>
+                         @else
+                            <li><a href="{{ route('member.login') }}" class="nav-link">Login</a></li>
+                            <li><a href="{{ route('member.registration') }}" class="nav-link">Registration</a></li>
+                        @endif
+    
+                        
                             {{-- <li><a href="{{route('myPost',id)}}" class="nav-link">My Post</a></li> --}}
                          
-                        {{-- <li><a href="" class="nav-link">Contact</a></li> --}}
+                            {{-- <li><a href="" class="nav-link">Contact</a></li> --}}
                     </ul>
                 </nav>
             </div>
