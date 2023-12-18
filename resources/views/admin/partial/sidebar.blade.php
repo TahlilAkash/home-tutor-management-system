@@ -36,9 +36,7 @@
                     <i class="fa-solid fa-user-graduate"></i>
                     <span>Teachers Post List</span></a>
             </li>
-            
-            
-            
+  
             {{-- <li class="nav-item">
                 <a class="collapse-item" href="{{route('student.list')}}"></a>
                     <i class="fa-solid fa-chalkboard-user"></i>
@@ -53,8 +51,6 @@
                 </div>
             </li> --}}
 
-            
-
             <!-- Divider -->
             <hr class="sidebar-divider">
 
@@ -63,15 +59,13 @@
                 Management
             </div>
 
-            
-
             <!-- Nav Item - Charts -->
             <li class="nav-item">
                 <a class="nav-link" href="{{route('subject.list')}}">
                     <i class="fa-solid fa-book"></i>
                     <span>Subject</span></a>
             </li>
-
+            
             <li class="nav-item">
                 <a class="nav-link" href="{{route('class.list')}}">
                 <i class="fa-solid fa-chalkboard"></i>
@@ -106,6 +100,20 @@
                     <i class="fa-solid fa-user"></i>    
                     <span>Member</span></a>
             </li>
+            <hr class="sidebar-divider">
+            <li class="nav-item">
+                <a class="nav-link" data-toggle="collapse" href="#collapseTwo">
+                    <i class="fas fa-money-check-alt"></i>
+                    <span>Payment</span>
+                </a>
+                <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <a class="collapse-item" href="{{route('student.payment.list')}}">Student Payment List</a>
+                        <a class="collapse-item" href="{{route('teacher.payment.list')}}">Teacher Payment List</a>
+                    </div>
+                </div>
+            </li>
+            
             
 </ul>
 

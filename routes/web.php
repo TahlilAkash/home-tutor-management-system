@@ -8,6 +8,7 @@ use App\Http\Controllers\Backend\TeacherController;
 use App\Http\Controllers\Backend\SubjectController;
 use App\Http\Controllers\Backend\TclassController;
 use App\Http\Controllers\Backend\InstituteController;
+use App\Http\Controllers\Backend\PaymentOfmemberController;
 use App\Http\Controllers\Backend\TuitionController;
 
 use App\Http\Controllers\Frontend\MemberController;
@@ -116,7 +117,7 @@ Route::group(['middleware' => 'auth'], function () {
         //Admin dashboard to count in small 
         
 
-        // user
+        // user=member
         Route::get('/users',[UserController::class, 'list'])->name('user.list');
         Route::get('/users/create',[UserController::class, 'createForm'])->name('users.Formcreate');
         Route::post('/users/store',[UserController::class, 'store'])->name('users.store');
@@ -158,6 +159,11 @@ Route::group(['middleware' => 'auth'], function () {
 
         Route::get('/class/form', [TclassController::class, 'Create_form'])->name('class.form');
         Route::post('/class/store', [TclassController::class, 'store_form'])->name('class.store');
+
+        //Admin view Student payment list
+        Route::get('/payment/view/student', [PaymentOfmemberController::class, 'view_student_payment'])->name('student.payment.list');
+        //Admin view teacher payment list
+        Route::get('/payment/view/teacher', [PaymentOfmemberController::class, 'view_teacher_payment'])->name('teacher.payment.list');
 
         // institute
         // Route::get('/institute/list', [InstituteController::class, 'Institute_li'])->name('institute.list');
