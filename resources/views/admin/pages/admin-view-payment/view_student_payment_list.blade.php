@@ -3,7 +3,7 @@
 @section('content')
 
 <div class="container">
-
+  
   <h1 style="font-size: 20px; font-weight: bold;">Student Payment List</h1>
  <div>
  </div>

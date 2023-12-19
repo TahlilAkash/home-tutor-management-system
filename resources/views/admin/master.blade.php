@@ -73,7 +73,8 @@
 
     
     </div>
-    
+    {{-- this script for report generate --}}
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 
     <!-- Bootstrap core JavaScript-->
     <script src="https://startbootstrap.github.io/startbootstrap-sb-admin-2/vendor/jquery/jquery.min.js"></script>
@@ -88,6 +89,9 @@
     <script src="https://startbootstrap.github.io/startbootstrap-sb-admin-2/js/demo/chart-area-demo.js"></script>
     <script src="https://startbootstrap.github.io/startbootstrap-sb-admin-2/js/demo/chart-pie-demo.js"></script>
     @notifyJs
+
+    {{-- @stack('yourJsCode') is for report generate --}}
+    @stack('yourJsCode')
 </body>
 
 </html>
