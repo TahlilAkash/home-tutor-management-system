@@ -17,6 +17,7 @@
                   <th scope="col">Name</th>
                   <th scope="col">Email</th>
                   <th scope="col">Role</th>
+                  <th scope="col">Transaction Id</th>
                   <th scope="col">Amount</th>
                 </tr>
               </thead>
@@ -30,6 +31,7 @@
                       </td> --}}
                       <td>{{$singleUser->email}}</td>
                       <td>{{$singleUser->role}}</td>
+                      <td>{{$singleUser->tran_id}}</td>
                       <td>{{$singleUser->amount}}.BDT</td>
                       
                   </tr>

@@ -104,12 +104,12 @@
             <li class="nav-item">
                 <a class="nav-link" data-toggle="collapse" href="#collapseTwo">
                     <i class="fas fa-money-check-alt"></i>
-                    <span>Payment</span>
+                    <span>Payment Report </span>
                 </a>
                 <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
-                        <a class="collapse-item" href="{{route('student.payment.list')}}">Student Payment List</a>
-                        <a class="collapse-item" href="{{route('teacher.payment.list')}}">Teacher Payment List</a>
+                        <a class="collapse-item" href="{{route('student.payment.list')}}">Student Payment Report</a>
+                        <a class="collapse-item" href="{{route('teacher.payment.list')}}">Teacher Payment Report</a>
                     </div>
                 </div>
             </li>

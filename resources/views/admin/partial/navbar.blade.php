@@ -19,17 +19,17 @@
     <li class="nav-item dropdown no-arrow list-unstyled">
             <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <span class="mr-2 d-none d-lg-inline font-weight-bold">Admin Profile</span>
+                <span class="mr-2 d-none d-lg-inline font-weight-bold">Admin</span>
                 <img class="img-profile rounded-circle"
                     src="https://startbootstrap.github.io/startbootstrap-sb-admin-2/img/undraw_profile.svg">
             </a>
             <!-- Dropdown - User Information -->
             <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
                 aria-labelledby="userDropdown">
-                <a class="dropdown-item" href="#">
+                {{-- <a class="dropdown-item" href="#">
                     <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
                     Profile
-                </a>
+                </a> --}}
                 
                 <a class="dropdown-item " href="{{route('admin.logout')}}">{{auth()->user()->name}}
                 <i class="fa-solid fa-right-from-bracket mr-2 text-gray-400"></i>
