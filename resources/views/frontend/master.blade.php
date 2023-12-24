@@ -2,14 +2,14 @@
 <html lang="en">
 
 <head>
-  
+
     <title>Home</title>
     <meta charset="utf-8">
     @notifyCss
     <style>
-        .notify{
+        .notify {
             z-index: 1000000;
-    }
+        }
     </style>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap" rel="stylesheet">
@@ -23,6 +23,8 @@
     <link rel="stylesheet" href="https://preview.colorlib.com/theme/tutor/css/aos.css">
 
     <link rel="stylesheet" href="https://preview.colorlib.com/theme/tutor/css/style.css">
+    {{-- bootstrap css --}}
+    {{-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous"> --}}
     <!-- <script nonce="9526ad61-09ed-44d2-954a-0817473f6c17">
         (function(w, d) {
             ! function(bS, bT, bU, bV) {
@@ -71,7 +73,8 @@
                         bS[bU].q.push(ch)
                     }
                     b$.defer = !0;
-                    for (const ci of [localStorage, sessionStorage]) Object.keys(ci || {}).filter((ck => ck.startsWith("_zaraz_"))).forEach((cj => {
+                    for (const ci of [localStorage, sessionStorage]) Object.keys(ci || {}).filter((ck => ck
+                        .startsWith("_zaraz_"))).forEach((cj => {
                         try {
                             bS[bU]["z_" + cj.slice(7)] = JSON.parse(ci.getItem(cj))
                         } catch {
@@ -82,16 +85,17 @@
                     b$.src = "/cdn-cgi/zaraz/s.js?z=" + btoa(encodeURIComponent(JSON.stringify(bS[bU])));
                     bZ.parentNode.insertBefore(b$, bZ)
                 };
-                ["complete", "interactive"].includes(bT.readyState) ? zaraz.init() : bS.addEventListener("DOMContentLoaded", zaraz.init)
+                ["complete", "interactive"].includes(bT.readyState) ? zaraz.init() : bS.addEventListener(
+                    "DOMContentLoaded", zaraz.init)
             }(w, d, "zarazData", "script");
         })(window, document);
     </script> -->
 </head>
 
-<body>
+<body style ='overflow-y:hidden !important'>
     <x-notify::notify />
     <div class="site-wrap" id="home-section">
-        
+
         <div class="site-mobile-menu site-navbar-target">
             <div class="site-mobile-menu-header">
                 <div class="site-mobile-menu-close mt-3">
@@ -104,7 +108,7 @@
 
 
         <!-- header -->
-        
+
         @include('frontend.partial.header')
 
 
@@ -165,7 +169,7 @@
             </div>
         </div> -->
         <!-- end breif  section -->
-        
+
 
         <!-- <div class="site-section">
             <div class="container">
@@ -345,12 +349,12 @@
                 </div>
             </div>
         </div> -->
-        
+
         <div class="site-section bg-light">
-        
-            
+
+
             @yield('content')
-             
+
             <div class="container">
 
                 <!-- welcome title  home blade e included-->
@@ -362,9 +366,9 @@
                         </div>
                     </div>
                 </div> -->
-                 <!-- end of welcome title  home blade e included-->
+                <!-- end of welcome title  home blade e included-->
 
-                
+
                 <!-- cart gula -->
 
                 <!-- <div class="row">
@@ -533,19 +537,25 @@
 
         gtag('config', 'UA-23581568-13');
     </script> -->
-    <script defer src="https://static.cloudflareinsights.com/beacon.min.js/v84a3a4012de94ce1a686ba8c167c359c1696973893317" integrity="sha512-euoFGowhlaLqXsPWQ48qSkBSCFs3DPRyiwVu3FjR96cMPx+Fr+gpWRhIafcHwqwCqWS42RZhIudOvEI+Ckf6MA==" data-cf-beacon='{"rayId":"82616af81b204e9e","version":"2023.10.0","token":"cd0b4b3a733644fc843ef0b185f98241"}' crossorigin="anonymous"></script>
+    <script defer src="https://static.cloudflareinsights.com/beacon.min.js/v84a3a4012de94ce1a686ba8c167c359c1696973893317"
+        integrity="sha512-euoFGowhlaLqXsPWQ48qSkBSCFs3DPRyiwVu3FjR96cMPx+Fr+gpWRhIafcHwqwCqWS42RZhIudOvEI+Ckf6MA=="
+        data-cf-beacon='{"rayId":"82616af81b204e9e","version":"2023.10.0","token":"cd0b4b3a733644fc843ef0b185f98241"}'
+        crossorigin="anonymous"></script>
     @notifyJs
 
     {{-- // ssl scritp --}}
     <script>
-        (function (window, document) {
-            var loader = function () {
-                var script = document.createElement("script"), tag = document.getElementsByTagName("script")[0];
-                script.src = "https://sandbox.sslcommerz.com/embed.min.js?" + Math.random().toString(36).substring(7);
+        (function(window, document) {
+            var loader = function() {
+                var script = document.createElement("script"),
+                    tag = document.getElementsByTagName("script")[0];
+                script.src = "https://sandbox.sslcommerz.com/embed.min.js?" + Math.random().toString(36).substring(
+                    7);
                 tag.parentNode.insertBefore(script, tag);
             };
-    
-            window.addEventListener ? window.addEventListener("load", loader, false) : window.attachEvent("onload", loader);
+
+            window.addEventListener ? window.addEventListener("load", loader, false) : window.attachEvent("onload",
+                loader);
         })(window, document);
     </script>
 </body>

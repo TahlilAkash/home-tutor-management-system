@@ -29,7 +29,7 @@ class MemberController extends Controller
     }
 
 
-    // store memeber data to db wheb registration
+    // store memeber data to db web registration
     public function store(Request $request)
     {
         // dd($request->all());

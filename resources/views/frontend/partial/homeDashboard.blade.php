@@ -1,16 +1,11 @@
 @extends('frontend.master')
 @section('content')
-<div class="site-section-cover overlay h-25" style="background-color:#303030; height:50%">
+<div class="site-section-cover overlay h-25 " style="background-color:#303030; height:50%;">
     
     <div class="container">
              
             <!-- Display search form only when logged in -->
-            @if (auth('member')->check())
-                <form action="{{route('subject.search')}}" method="get">
-                    <input type="text" class="form-control mt-1" style="width: 200px; display: inline-block;" placeholder="Search by subject.." name="search">
-                    <button            button type="submit" class="btn btn-success" style="border: 2px solid green; background-color: green; color: white;">Search</button>
-                </form>
-             @endif
+            
              <!-- end search form only when logged in -->
 
         <div class="row align-items-center justify-content-center" >
