@@ -13,31 +13,54 @@ class HomeController extends Controller
     {
         // $tuitionposts=TuitionPost::all();
 
-        $tuitionposts = TuitionPost::where('role' , '=', 'tutor')->where('status','approved')->get();
+        $tuitionposts = TuitionPost::where('role', '=', 'tutor')->where('status', 'approved')->get();
 
-        $studentposts = TuitionPost::where('role' , '=', 'student')->where('status','approved')->get();
+        $studentposts = TuitionPost::where('role', '=', 'student')->where('status', 'approved')->get();
         //dd( $studentposts->toarray());
-        return view('frontend.partial.homeDashboard',compact('studentposts', 'tuitionposts'));
-       
+        return view('frontend.partial.homeDashboard', compact('studentposts', 'tuitionposts'));
     }
 
 
-     // search by the subject
-     public function search(Request $request)
-     {
+
+
+    public function search(Request $request)
+    {
+        // Initialize $relatedposts as an empty collection
+        $relatedposts = collect();
+
+        // Determine the user role
+        $userRole = optional(auth('member')->user())->role;
+
+        if ($request->search) {
+            // When there is a search term
+            $query = TuitionPost::where('status', 'approved');
+
+            // Modify the query based on user role
+            if ($userRole == 'student') {
+                $query->where('role', 'tutor');
+            } elseif ($userRole == 'teacher') {
+                $query->where('role', 'student');
+            }
+
+            // Apply the subject filter
+            $relatedposts = $query->where('subject_name', 'LIKE', '%' . $request->search . '%')->get();
+        } else {
+            // When there is no search term
+            // Display all approved posts based on user role
+            $relatedposts = TuitionPost::where('status', 'approved');
+
+            if ($userRole == 'student') {
+                $relatedposts->where('role', 'tutor');
+            } elseif ($userRole == 'teacher') {
+                $relatedposts->where('role', 'student');
+            }
+
+            $relatedposts = $relatedposts->get();
+        }
+
         
- 
-         if($request->search)
-         {
-             $relatedposts=TuitionPost::where('subject_name','LIKE','%'.$request->search.'%')->get();
-             //select * from products where name like % akash %;
-         }else{
-             $relatedposts=TuitionPost::all();
-         }
- 
- 
- 
-         return view("frontend.pages.search",compact('relatedposts'));
-     }
-    
+
+        // Return the view with the data
+        return view("frontend.pages.search", compact('relatedposts'));
+    }
 }

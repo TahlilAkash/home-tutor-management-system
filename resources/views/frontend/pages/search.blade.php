@@ -24,7 +24,7 @@
                     <span class="caption">Welcome To Tuition Management Site</span>
                     
                     <h4>Search result for : {{ request()->search }} found {{$relatedposts->count()}} Post .</h4>
-                
+                    
                 </div>
             </div>
         </div>
