@@ -104,4 +104,59 @@ class UserController extends Controller
 
 
     }
+
+    // delete user =member
+    // delete method 
+    public function delete_user($id)
+    {
+        // dd($id);
+        
+        $member=Member::find($id);
+        if($member)
+        {
+              $member->delete();
+        }
+      
+        notify()->success('Member Deleted Successfully.');
+        return redirect()->back();
+          
+    }
+
+    //edit member
+    public function edit_user($id)
+    {
+        $member=Member::find($id);
+        // dd($subject);
+        return view('admin.pages.users.edit_user',compact('member'));// Member Model is assigned to member variable
+            
+    }
+    // update member info
+    public function update_user(Request $request,$id)
+    {
+        $member=Member::find($id);
+
+        if($member)
+        {
+
+          $fileName=$member->image;
+          if($request->hasFile('user_image'))
+          {
+              $file=$request->file('user_image');
+              $fileName=date('Ymdhis').'.'.$file->getClientOriginalExtension();
+
+              $file->storeAs('/uploads',$fileName);
+
+          }
+
+          $member->update([
+            'name'=>$request->user_name,
+            'email'=>$request->user_email,
+            'image'=>$fileName
+          ]);
+
+          notify()->success('User updated successfully.');
+          return redirect()->route('user.list');
+        }
+    }
+
 }

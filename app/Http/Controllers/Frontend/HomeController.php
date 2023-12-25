@@ -22,7 +22,7 @@ class HomeController extends Controller
 
 
 
-
+    // search option
     public function search(Request $request)
     {
         // Initialize $relatedposts as an empty collection

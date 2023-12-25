@@ -68,7 +68,7 @@ Route::group(['middleware'=>'frontendAuth'],function(){
     Route::get('/teacher-student/post/singleview/{id}',[PostController::class,'singlePostview'])->name('s_t.post.singleview');
 
     //Mypost
-//     Route::get('/myPost/{id}',[MyPostController::class,'myPost'])->name('myPost');
+    //Route::get('/myPost/{id}',[MyPostController::class,'myPost'])->name('myPost');
 
     Route::get('/applicents/{id}',[ApplyPostController::class,'applicent'])->name('applicent');
     Route::get('/my/post/{id}',[ApplyPostController::class,'myPost'])->name('my.post');
@@ -119,6 +119,10 @@ Route::group(['middleware' => 'auth'], function () {
 
         // user=member
         Route::get('/users',[UserController::class, 'list'])->name('user.list');
+        Route::get('/users/delete/{id}', [UserController::class, 'delete_user'])->name('user.delete');
+        Route::get('/users/edit/{id}', [UserController::class, 'edit_user'])->name('user.edit');
+        Route::put('/users/update/{id}',[UserController::class, 'update_user'])->name('user.update');
+        
         Route::get('/users/create',[UserController::class, 'createForm'])->name('users.Formcreate');
         Route::post('/users/store',[UserController::class, 'store'])->name('users.store');
 

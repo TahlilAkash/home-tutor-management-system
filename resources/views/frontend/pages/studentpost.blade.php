@@ -2,7 +2,7 @@
 
 @section('content')
 
-<div class="container">
+<div class="container mt-5">
     <!-- enctype="multipart/form-data" -->
     <form action="{{route('student.tuition.post.store')}}" method="post" enctype="multipart/form-data">
         @csrf
