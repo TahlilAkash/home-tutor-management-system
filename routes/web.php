@@ -129,19 +129,18 @@ Route::group(['middleware' => 'auth'], function () {
 
         // admin panel student list
         Route::get('/studentlist', [StudentController::class, 'Studentlist'])->name('student.list');
-        // Route::get('/student/advertisement', [StudentController::class, 'Student_Adv'])->name('student.post');
         Route::get('/studentlist/delete/{id}', [StudentController::class, 'delete'])->name('studentlist.delete');
+                // student post edit is attach with teacher/student url in teacher controller
         Route::get('/studentlist/edit/{id}', [StudentController::class, 'edit'])->name('studentlist.edit');
         Route::put('/studentlist/update/{id}',[StudentController::class, 'update'])->name('studentlist.update');
         
         
         // admin panel teacher list
         Route::get('/teacherlist', [TeacherController::class, 'Teacherlist'])->name('teacher.list');
-
+        // here teacher & student post edit= approved by admin
         Route::get('/teacherlist/delete/{id}',[TeacherController::class,'delete'])->name('teacherlist.delete');
-        Route::get('/teacherlist/edit/{id}', [TeacherController::class, 'edit'])->name('teacherlist.edit');
+        Route::get('/teacherlist/studentlist/edit/{id}', [TeacherController::class, 'edit'])->name('teacherlist.edit');
         Route::put('/teacherlist/update/{id}',[TeacherController::class, 'update'])->name('teacherlist.update');
-        // Route::get('/teacher/advertisement', [TeacherController::class, 'T_adv'])->name('teacher.post');
        
 
         // subject

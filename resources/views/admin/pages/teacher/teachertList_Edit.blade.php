@@ -19,30 +19,18 @@
                 {{-- <option @if($teacherEdit->status=='cancel') selected @endif value="cancel">Cancel</option> --}}
             </select>
         </div>
-{{-- <hr>
-        <div class="form-group">
+        
+        {{-- <div class="form-group">
             <label for="name">Name:</label>
             <input value="{{$teacherEdit->name}}" name="name" type="text" class="form-control" id="name" placeholder="Enter your name">
 
         </div>
-
-        <div class="form-group">
-            <label for="">Role:</label>
-            <select required class="form-control" name="role" id="">
-
-                <option value="{{$teacherEdit->role}}">Tuitor</option>
-                
-                
-            </select>
-        </div>
-
+        
         <div class="form-group">
             <label for="exampleInputEmail1">Email address:</label>
             <input value="{{$teacherEdit->email}}" name="email" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
 
         </div>
-
-        
 
         <div class="form-group">
             <label for="">Class List </label>
@@ -57,7 +45,6 @@
     
             </select>
         </div>
-
 
         <div class="form-group">
             <label for="">Subject Name</label>
@@ -82,13 +69,10 @@
             <input value="{{$teacherEdit->contact}}" type="tel" name="contact" class="form-control" id="" placeholder="Contact">
         </div>
 
-
         <div class="form-group">
             <label for="">Address:</label>
             <textarea  class="form-control" name="address" id="" cols="15" rows="5">{{$teacherEdit->address}}</textarea>
         </div>
-
-        
 
 
         <div class="form-group">

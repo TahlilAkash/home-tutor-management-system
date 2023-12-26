@@ -61,7 +61,7 @@ class TeacherController extends Controller
 
           $tUpdate->update([ // database column name-- form name property
 
-            'status'=>$request->status
+            'status'=>$request->status,
             // 'name'=>$request->name,
             // 'role'=>$request->role,
             // 'email'=>$request->email,
