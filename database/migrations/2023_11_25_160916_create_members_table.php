@@ -29,7 +29,7 @@ return new class extends Migration
             
             $table->string('member_subscription')->nullable();
             $table->string('tran_id')->nullable()->unique();
-            $table->integer('limit')->nullable();
+            // $table->integer('limit')->nullable();
             $table->string('amount')->nullable();
             
             $table->string('status')->nullable();

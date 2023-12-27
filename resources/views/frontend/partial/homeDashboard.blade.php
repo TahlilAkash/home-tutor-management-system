@@ -59,8 +59,8 @@
                             <h3 class="h5">Need Tuition</h3>
                             @endif
 
-                            <div class="d-flex v-card align-items-center">
-                                <img src="{{url('/uploads/'.$tpost->image)}}" alt="Image" class="img-fluid mr-3">
+                            <div class="d-flex v-card align-items-center" >
+                                <img src="{{url('/uploads/'.$tpost->image)}}" alt="img" style="width: 50px; height: 50px; object-fit: cover; border: 1px solid rgb(172, 169, 169); border-radius:60%; color:black;">
                             </div>
                             <h6>Name: {{$tpost->name}}</h6>                       
                             <h6>Role: {{$tpost->role}}</h6>

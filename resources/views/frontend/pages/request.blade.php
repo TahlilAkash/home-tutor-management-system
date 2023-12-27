@@ -19,6 +19,7 @@
               </div> --}}
               
             <div>
+              <a  href="{{route('profile.edit',auth('member')->user()->id)}}" class="btn btn-rounded text-white mb-2" style="background-color: rgb(255, 187, 0); border-color:rgb(255, 187, 0) ;" > Edit Profile info</a> 
 
                 <h5 class="mb-2 text-white">Full Name: {{ auth('member')->user()->name }}</h5>
                 

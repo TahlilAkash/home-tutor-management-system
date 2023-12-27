@@ -2,7 +2,7 @@
 
 @section('content')
 
-<div class="container">
+<div class="container mt-5">
     <form action="{{route('my.post.update',$postEdit->id)}}" method="post" enctype="multipart/form-data">
         @csrf
         @method('put')

@@ -2,7 +2,7 @@
 
 @section('content')
 
-<div class="container col-3  ">
+<div class="container col-3 mt-5">
   {{-- enctype="multipart/form-data" --}}
   <form action="{{route('member.store')}}" method="post" enctype="multipart/form-data">
   @include('notify::components.notify')

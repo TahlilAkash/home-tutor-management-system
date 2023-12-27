@@ -17,8 +17,8 @@ return new class extends Migration
             $table->string('role');
             $table->string('email');
             $table->integer('user_id');
-            $table->string('class_list',15); 
-            $table->string('subject_name',30);
+            $table->string('class_list'); 
+            $table->string('subject_name');
             $table->string('salary',5);
             $table->string('contact');
             $table->string('address',30);

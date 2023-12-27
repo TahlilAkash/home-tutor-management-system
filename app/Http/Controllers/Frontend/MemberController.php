@@ -15,6 +15,7 @@ class MemberController extends Controller
     {
         // $tuition_apply=TuitionApply::all();
         return view('frontend.pages.registration'); //,compact('tuition_apply')
+        
     }
     
     // profile view
@@ -54,7 +55,7 @@ class MemberController extends Controller
         ]);
 
         notify()->success('User Registration successful.');
-        return redirect()->back();
+        return redirect()->route('member.do.login');
     }
 
 

@@ -27,8 +27,10 @@ class TeacherpostController extends Controller
             // 'email' => 'required',   // name property of the form
             'class_list' => 'required',
             'subject_name'=> 'required',
-            'salary'=>'required',
-            'contact'=> 'required',
+            'salary'=>'required|numeric|max:15000',
+            'contact' => 'required',
+            // 'contact' => 'required|regex:/^(\+8801|8801|01)[1-9]\d{8}$/',
+
         ]);
 
         if ($val->fails()) {

@@ -33,7 +33,7 @@
                             <td>{{ $TList->email }}</td>
                             <td>{{ $TList->class_list }}</td>
                             <td>{{ $TList->subject_name }}</td>
-                            <td>{{ $TList->salary }}</td>
+                            <td>{{ $TList->salary }} .BDT </td>
                             <td>{{ $TList->contact }}</td>
                             <td>{{ $TList->address }}</td>
                             <td><img class="img" src="{{ url('/uploads/' . $TList->image) }}"

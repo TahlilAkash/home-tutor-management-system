@@ -10,34 +10,36 @@ use App\Library\SslCommerz\SslCommerzNotification;
 
 class BuyPremiumController extends Controller
 {
-    public function buyPremium(){
+    public function buyPremium()
+    {
         return view('frontend.pages.CreatePremium.buypremium');
     }
 
-    public function subscriptionPurchase($id){
-        
+    public function subscriptionPurchase($id)
+    {
+
 
         //package purchase
 
-        $member=Member::find($id); // member varible 
+        $member = Member::find($id); // member varible 
         // dd($member);
         $member->update([
-            'member_subscription'=>1,  
-           'tran_id'=>date('Ymdhis'),   
-           'amount' => 100,    
-           'status' => 'pending'                                  
+            'member_subscription' => 1,
+            'tran_id' => date('Ymdhis'),
+            'amount' => 100,
+            'status' => 'pending'
         ]);
 
 
         //payment
         $this->payment($member);
         notify()->success('subscription purchased successfully.');
-        return redirect()->route('home');  
+        return redirect()->route('home');
     }
 
 
     public function payment($order)
-    {   
+    {
         // dd($order);
         # Here you have to receive all the order data to initate the payment.
         # Let's say, your oder transaction informations are saving in a table called "orders"
@@ -103,7 +105,5 @@ class BuyPremiumController extends Controller
             print_r($payment_options);
             $payment_options = array();
         }
-
     }
-   
-} 
+}
