@@ -28,7 +28,7 @@
                         <li><a href="{{ route('home') }}" class="nav-link " style="font-weight: bold;">Home</a></li>
 
                         <li><a href="" class="nav-link" style="font-weight: bold;">About</a></li>
-                        <li><a href="" class="nav-link" style="font-weight: bold;">Contact</a></li>
+
                         {{-- Buy premium --}}
                         {{-- @if (auth('member')->user())
                 
