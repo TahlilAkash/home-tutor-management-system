@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Backend;
 use App\Http\Controllers\Controller;
 use App\Models\Classt;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
 
 class TclassController extends Controller
 {
@@ -64,6 +65,14 @@ class TclassController extends Controller
         //dd($request->all());
         //model mame
         // storing to the database
+        $validate=Validator::make($request->all(),[
+            //name property of  form 
+        'class_name'=>'required',
+        ]);
+         // validate before store
+        if($validate->fails()){
+            return redirect()->back()->withErrors($validate);
+        }
         Classt::create([
             'name'=>$request->class_name,  //database column name,request , name property of form
             

@@ -23,6 +23,7 @@ class StudentpostController extends Controller
         // 
         $val = Validator::make($request->all(), [
             // 'email' => 'required',      //name property of the form
+            'role'=>'required',
             'class_list' => 'required',
             'subject_name'=> 'required',
             'salary'=>'required',
