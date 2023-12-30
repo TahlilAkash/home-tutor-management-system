@@ -77,6 +77,15 @@
             </div>
         </div>
     </div>
+    <div style="position: relative; width:100%; height: 370px;">
+        <img src="{{ url('/dashboardpic/image_set1.jpg') }}" alt="img" style="width: 100%; height: 100%; object-fit: cover;">
+        {{-- <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); text-align: center; color: white; font-size: 45px; font-weight: bold;">
+            Home Tutor Management System
+        </div> --}}
+        
+
+    </div>
+    
 </div>    
 
 @endsection
