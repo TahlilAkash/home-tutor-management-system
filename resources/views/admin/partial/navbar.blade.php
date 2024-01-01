@@ -20,8 +20,8 @@
             <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <span class="mr-2 d-none d-lg-inline font-weight-bold">Admin</span>
-                <img class="img-profile rounded-circle"
-                    src="https://startbootstrap.github.io/startbootstrap-sb-admin-2/img/undraw_profile.svg">
+                <img class="img-profile rounded-circle";
+                    src="{{ url('/uploads/akash.jpg') }}" alt="img" style="height: auto; width: 37px;"> 
             </a>
             <!-- Dropdown - User Information -->
             <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
