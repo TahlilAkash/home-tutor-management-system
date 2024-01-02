@@ -170,9 +170,12 @@ class SslCommerzPaymentController extends Controller
         $amount = $request->input('amount');
         $currency = $request->input('currency');
 
+
+
         $sslc = new SslCommerzNotification();
 
         $order_details = Member::where('tran_id', $tran_id)->first();
+
         // dd($order_details);
 
         if ($order_details->status == 'pending') {
@@ -190,6 +193,7 @@ class SslCommerzPaymentController extends Controller
                 //     ->update(['status' => 'Processing']);
                 $order_details->update([
                     'status' => 'confirm',
+                    'payment_count'=> $order_details->payment_count+1,
                 ]);
                 // dd($order_details->status);
 

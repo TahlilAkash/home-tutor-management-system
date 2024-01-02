@@ -66,9 +66,10 @@
 
                             @php
                                 $tutionPostCount = \App\Models\TuitionPost::where('user_id', auth('member')->user()->id)->count();
-                            @endphp
+                                @endphp
 
-                            @if (auth('member')->user()->status == 'confirm')
+
+                            @if (auth('member')->user()->status == 'confirm' && (($tutionPostCount-3)/3)< auth('member')->user()->payment_count)
                                 {{-- Show create post links based on the user's role --}}
                                 @if (auth('member')->user()->role == 'teacher')
                                     <li><a href="{{ route('teacher.create.tuition.post') }}" class="nav-link"

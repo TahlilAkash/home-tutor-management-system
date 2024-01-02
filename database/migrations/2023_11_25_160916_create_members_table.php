@@ -33,6 +33,8 @@ return new class extends Migration
             $table->string('amount')->nullable();
             
             $table->string('status')->nullable();
+            $table->integer('payment_count')->default(0);
+
 
 
 
