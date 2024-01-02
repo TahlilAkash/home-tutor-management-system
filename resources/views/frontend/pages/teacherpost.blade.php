@@ -70,7 +70,7 @@
             
             <div class="form-group">
                 <label for="">Salary: </label>
-                <input required type="number" name="salary" class="form-control" id="" placeholder="Salary">
+                <input required type="number" name="salary" class="form-control" id="contact" placeholder="Salary"  min="1000" max="15000">
             </div>
 
 

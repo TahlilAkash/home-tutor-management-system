@@ -65,12 +65,12 @@
 
         <div class="form-group">
             <label for="">Contact: </label>
-            <input type="number" name="contact" class="form-control" id="" placeholder="Contact" required>
+            <input type="number" name="contact" class="form-control" id="contact" placeholder="Contact" required >
         </div>
         
         <div class="form-group">
             <label for="">Salary: </label>
-            <input required type="number" name="salary" class="form-control" id="" placeholder="Salary">
+            <input required type="number" name="salary" class="form-control" id="salary" placeholder="Salary" min="1000" max="15000">
         </div>
 
 
