@@ -3,7 +3,7 @@
     <div class="container">
 
         <h1 style="font-size: 20px; font-weight: bold;">Class List</h1>
-        <a class=" btn btn-success mb-2" href="{{ route('class.form') }}">Create Subject </a>
+        <a class=" btn btn-success mb-2" href="{{ route('class.form') }}">Create Class</a>
         <table class="table">
             <thead>
                 <tr>

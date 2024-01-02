@@ -45,8 +45,8 @@
                         @endif
 
                         
-                        {{-- @if(!$singlepost->applications()->where('user_id', auth('member')->user()->id)->exists())
-                            <a class="btn btn-primary" href="{{ route('apply.post.now', $singlepost->id) }}" role="button">Apply</a>
+                        {{-- @if(!$singlepost->applications()->where('user_id', auth('member')->user()- >id)->exists())
+                            <a class="btn btn-primary" href="{{ route('apply.post.now', $singlepost->id)}}" role="button">Apply</a>
                         @else
                             <p style="color: red; margin-top:5px;">You Already Applied to This Post</p>
                         @endif --}}

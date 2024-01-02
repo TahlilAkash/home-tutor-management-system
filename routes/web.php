@@ -73,7 +73,7 @@ Route::group(['middleware'=>'frontendAuth'],function(){
     Route::get('/applicents/{id}',[ApplyPostController::class,'applicent'])->name('applicent');
     Route::get('/my/post/{id}',[ApplyPostController::class,'myPost'])->name('my.post');
     Route::get('/my/post/request/{id}',[ApplyPostController::class,'request'])->name('request');
-    Route::get('/my/request/edit/{id}',[ApplyPostController::class,'request_edit'])->name('request.edit');
+//     Route::get('/my/request/edit/{id}',[ApplyPostController::class,'request_edit'])->name('request.edit');
     Route::get('/my/post/edit/{id}', [ApplyPostController::class, 'edit'])->name('my.post.edit');
     Route::put('/my/post/update/{id}',[ApplyPostController::class, 'update'])->name('my.post.update');
 

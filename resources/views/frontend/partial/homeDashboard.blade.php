@@ -110,12 +110,12 @@
                             </div>
                             <h6>Name: {{ $tpost->name }}</h6>
                             <h6>Role: {{ $tpost->role }}</h6>
-                            <h6>Email Address: {{ $tpost->email }}</h6>
+                            {{-- <h6>Email Address: {{ $tpost->email }}</h6> --}}
                             <h6>Address: {{ $tpost->address }}</h6>
                             <h6>Class: {{ $tpost->class_list }}</h6>
                             <h6>Subject: {{ $tpost->subject_name }}</h6>
-                            <h6>Salary: {{ $tpost->salary }} .BDT</h6>
-                            <h6>Contact: {{ $tpost->contact }}</h6>
+                            {{-- <h6>Salary: {{ $tpost->salary }} .BDT</h6> --}}
+                            {{-- <h6>Contact: {{ $tpost->contact }}</h6> --}}
                             <a class="btn btn-primary" href="{{ route('s_t.post.singleview', $tpost->id) }}"
                                 role="button">See More</a>
 
@@ -155,16 +155,17 @@
                             @endif
 
                             <div class="d-flex v-card align-items-center">
-                                <img src="{{ url('/uploads/' . $spost->image) }}" alt="Image" class="img-fluid mr-3">
+                                <img src="{{ url('/uploads/' . $spost->image) }}" alt="img"
+                                    style="width: 50px; height: 50px; object-fit: cover; border: 1px solid rgb(172, 169, 169); border-radius:60%; color:rgb(0, 0, 0);">
                             </div>
                             <h6>Name: {{ $spost->name }}</h6>
                             <h6>Role: {{ $spost->role }}</h6>
-                            <h6>Email Address: {{ $spost->email }}</h6>
+                            {{-- <h6>Email Address: {{ $spost->email }}</h6> --}}
                             <h6>Address: {{ $spost->address }}</h6>
                             <h6>Class: {{ $spost->class_list }}</h6>
                             <h6>Subject: {{ $spost->subject_name }}</h6>
-                            <h6>Salary: {{ $spost->salary }} .BDT</h6>
-                            <h6>Contact: {{ $spost->contact }}</h6>
+                            {{-- <h6>Salary: {{ $spost->salary }} .BDT</h6> --}}
+                            {{-- <h6>Contact: {{ $spost->contact }}</h6> --}}
                             <a class="btn btn-primary" href="{{ route('s_t.post.singleview', $spost->id) }}"
                                 role="button">See More</a>
 

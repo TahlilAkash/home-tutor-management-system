@@ -74,7 +74,7 @@ class TeacherController extends Controller
             // 'image'=>$fileName
           ]);
 
-          notify()->success('Teacher List updated successfully.');
+          notify()->success(' Status updated successfully.');
           return redirect()->back();
         }
     }

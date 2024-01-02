@@ -62,18 +62,15 @@ class ApplyPostController extends Controller
     }
     public function request($id)
     {
-        // $userIDs = ApplyPost::where('tuition_post_id', $id)->pluck('user_id');
-        // $request=ApplyPost::with(['TuitionPost','member'])->where('tuition_post_id',$id)->get();
-        // return view('frontend.pages.request',compact('request'));
-
-        // $userIDs = ApplyPost::where('tuition_post_id', $id)->pluck('user_id');
+        
         $request = ApplyPost::with(['tuitionPost', 'member'])->where('tuition_post_id', $id)->get();
         return view('frontend.pages.request', compact('request'));
     }
     
+    // I applied on the post  (pendig post )........................
     public function applicent($id)
     {
-        $applicentDetail=ApplyPost::with('TuitionPost')->where('user_id',$id)->where('status','pending')->get();
+        $applicentDetail=ApplyPost::with('tuitionPost')->where('user_id',$id)->where('status','pending')->get();
         // dd($applicentDetail->all());
         return view('frontend.pages.applicent',compact('applicentDetail'));
     }
