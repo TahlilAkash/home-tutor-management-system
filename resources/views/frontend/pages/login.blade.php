@@ -3,7 +3,7 @@
 
 @section('content')
 
-<div class="container col-3">
+<div class="container col-3 mt-5 p-3" style="border: 2px solid;">
         {{-- @include('notify::components.notify') --}}
 
         {{-- <div>        #####jodi session lage log in korar somoy // 
@@ -17,7 +17,7 @@
     
         @csrf
 
-<br><br><br><br>
+
         <div class="form-group">
             <label for="exampleInputEmail1">Email address</label>
             <input required name="email" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">

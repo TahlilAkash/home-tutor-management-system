@@ -54,20 +54,22 @@ class ApplyPostController extends Controller
        return redirect()->back();
     }
 
+    // my post ...........................
     public function myPost($id)
     {
         $myPost=TuitionPost::where('user_id',$id)->get();
         // dd($myPost->all());
         return view('frontend.pages.mypost',compact('myPost'));
     }
+    // request on my post..........................................
     public function request($id)
     {
         
         $request = ApplyPost::with(['tuitionPost', 'member'])->where('tuition_post_id', $id)->get();
         return view('frontend.pages.request', compact('request'));
     }
-    
-    // I applied on the post  (pendig post )........................
+
+    // I applied on the post  (pendig post)........................
     public function applicent($id)
     {
         $applicentDetail=ApplyPost::with('tuitionPost')->where('user_id',$id)->where('status','pending')->get();

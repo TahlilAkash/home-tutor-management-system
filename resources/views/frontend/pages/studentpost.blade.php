@@ -65,7 +65,7 @@
 
         <div class="form-group">
             <label for="">Contact: </label>
-            <input type="number" name="contact" class="form-control" id="" placeholder="Contact">
+            <input type="number" name="contact" class="form-control" id="" placeholder="Contact" required>
         </div>
         
         <div class="form-group">

@@ -67,10 +67,12 @@ Route::group(['middleware'=>'frontendAuth'],function(){
     //single cart view
     Route::get('/teacher-student/post/singleview/{id}',[PostController::class,'singlePostview'])->name('s_t.post.singleview');
 
-    //Mypost
+    
     //Route::get('/myPost/{id}',[MyPostController::class,'myPost'])->name('myPost');
 
+     // I applied on the post  (pendig post)........................
     Route::get('/applicents/{id}',[ApplyPostController::class,'applicent'])->name('applicent');
+    //my post
     Route::get('/my/post/{id}',[ApplyPostController::class,'myPost'])->name('my.post');
     Route::get('/my/post/request/{id}',[ApplyPostController::class,'request'])->name('request');
 //     Route::get('/my/request/edit/{id}',[ApplyPostController::class,'request_edit'])->name('request.edit');

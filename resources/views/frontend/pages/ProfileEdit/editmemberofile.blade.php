@@ -2,7 +2,7 @@
 
 @section('content')
 
-<div class="container col-3 mt-3"  style="border: 2px solid; padding:10px;">
+<div class="container col-3 "  style="border: 2px solid; padding:10px; margin-top:25px">
   
   <form action="{{ route('profile.update', $memprofileVar->id) }}" method="post" enctype="multipart/form-data">
     
