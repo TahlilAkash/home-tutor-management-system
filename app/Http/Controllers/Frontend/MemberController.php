@@ -33,6 +33,21 @@ class MemberController extends Controller
     // store memeber data to db web registration
     public function store(Request $request)
     {
+        $validate=Validator::make($request->all(),[
+            'name' => 'required|regex:/^[a-zA-Z\s]+$/',
+            'email'=>'required|email',
+            'role'=>'required',
+            'password'=>'required|min:6',
+
+         ]);
+
+         if($validate->fails())
+         {
+            // notify()->success('Profile updated successfully.');
+
+            notify()->error($validate->getMessageBag());
+            return redirect()->back();
+         }
         // dd($request->all());
         $fileName=null;
         if($request->hasFile('image'))

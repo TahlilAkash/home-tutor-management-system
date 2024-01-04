@@ -26,8 +26,8 @@ class StudentpostController extends Controller
             'role'=>'required',
             'class_list' => 'required',
             'subject_name'=> 'required',
-            'salary'=>'required|numeric|between:1000,15000',
-            'contact'=> 'required',
+            'salary'=>'required|numeric|between:1000,10000',
+            'contact'=> 'required|regex:/^01[3-9][0-9]{8}$/|numeric',
         ]);
 
         if ($val->fails()) {
