@@ -20,6 +20,9 @@ class HomeController extends Controller
         return view('frontend.partial.homeDashboard', compact('studentposts', 'tuitionposts'));
     }
 
+    public function about_page(){
+        return view('frontend.pages.aboutPage');
+    }
 
 
     // search option

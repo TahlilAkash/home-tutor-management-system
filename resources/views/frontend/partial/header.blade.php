@@ -27,7 +27,7 @@
                     <ul class="site-menu main-menu js-clone-nav ml-auto ">
                         <li><a href="{{ route('home') }}" class="nav-link " style="font-weight: bold;">Home</a></li>
 
-                        <li><a href="" class="nav-link" style="font-weight: bold;">About</a></li>
+                        <li><a href="{{route('about.page')}}" class="nav-link" style="font-weight: bold;">About</a></li>
 
                         {{-- Buy premium --}}
                         {{-- @if (auth('member')->user())

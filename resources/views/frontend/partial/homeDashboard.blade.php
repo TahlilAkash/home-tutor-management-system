@@ -57,7 +57,7 @@
                             <li> Provide the necessary information</li>
                             <li> Please provide your affordable salary. </li>
                         </ul>
-                        <a href="{{ route('member.registration') }}" class="btn btn-primary" style="font-size: 12px;">
+                        <a href="{{ route('member.registration') }}" class="btn btn-primary" style="font-size: 12px; margin-top:25px;">
                             Register Now</a>
                     </div>
                 </div>
@@ -66,7 +66,7 @@
                     <div class="testimonial-2 mb-4" style="height: 300px; ">
                         <h4 style="font-size: 20px; font-weight: bold; text-align: center;"> GET Premium !</h4>
                         <ul style="list-style-type: circle">
-                            <li>Upgrade to premium to access <span style="font-weight: bold;">unlimited post !</span> </li>
+                            <li>Upgrade to premium for creating <span style="font-weight: bold;">more post !</span> </li>
                             <li> <span class="d-inline" style="color: red;">"You can only access the Premium option after
                                     creating three posts."</span></li>
 

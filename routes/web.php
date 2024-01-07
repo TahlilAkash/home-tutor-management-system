@@ -36,6 +36,8 @@ use App\Http\Controllers\SslCommerzPaymentController;
 */
 //web site home page
 Route::get('/',[FrontendHomeController::class,'home'])->name('home');
+// about page 
+Route::get('/about',[FrontendHomeController::class,'about_page'])->name('about.page');
 
 
 Route::get('/registration',[MemberController::class,'registration'])->name('member.registration');
@@ -43,6 +45,7 @@ Route::post('/registration',[MemberController::class, 'store'])->name('member.st
 
 Route::get('/login',[MemberController::class, 'login'])->name('member.login');
 Route::post('/login',[MemberController::class,'doLogin'])->name('member.do.login');
+
 
 Route::group(['middleware'=>'frontendAuth'],function(){
         // member profile view
