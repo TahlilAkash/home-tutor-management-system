@@ -36,6 +36,7 @@ class MemberController extends Controller
         $validate=Validator::make($request->all(),[
             'name' => 'required|regex:/^[a-zA-Z\s]+$/',
             'email'=>'required|email',
+            'contact' => 'required|regex:/^01[3-9][0-9]{8}$/|numeric',
             'role'=>'required',
             'password'=>'required|min:6',
 
@@ -64,7 +65,7 @@ class MemberController extends Controller
             'email' => $request->email,
             'role' => $request->role,
             'image'=>$fileName,
-            // 'contact'=>$request->contact,
+            'contact'=>$request->contact,
             'password' => bcrypt($request->password),
              
         ]);
@@ -140,7 +141,7 @@ class MemberController extends Controller
                 $memprofileVar->update([
                     'name'=>$request->name,
                     'email'=>$request->email,
-                    
+                    'contact'=>$request->contact,
                     'password' => bcrypt($request->password),
                     'image'=>$fileName
 

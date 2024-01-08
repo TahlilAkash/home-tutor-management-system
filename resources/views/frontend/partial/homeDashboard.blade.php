@@ -57,7 +57,8 @@
                             <li> Provide the necessary information</li>
                             <li> Please provide your affordable salary. </li>
                         </ul>
-                        <a href="{{ route('member.registration') }}" class="btn btn-primary" style="font-size: 12px; margin-top:25px;">
+                        <a href="{{ route('member.registration') }}" class="btn btn-primary"
+                            style="font-size: 12px; margin-top:25px;">
                             Register Now</a>
                     </div>
                 </div>
@@ -106,7 +107,7 @@
 
                             <div class="d-flex v-card align-items-center">
                                 <img src="{{ url('/uploads/' . $tpost->image) }}" alt="img"
-                                    style="width: 50px; height: 50px; object-fit: cover; border: 1px solid rgb(172, 169, 169); border-radius:60%; color:black;">
+                                    style="width: 80px; height: 80px; object-fit: cover;  object-position: top; border: 1px solid rgb(172, 169, 169); border-radius:60%; color:black;">
                             </div>
                             <h6>Name: {{ $tpost->name }}</h6>
                             <h6>Role: {{ $tpost->role }}</h6>
@@ -156,7 +157,7 @@
 
                             <div class="d-flex v-card align-items-center">
                                 <img src="{{ url('/uploads/' . $spost->image) }}" alt="img"
-                                    style="width: 50px; height: 50px; object-fit: cover; border: 1px solid rgb(172, 169, 169); border-radius:60%; color:rgb(0, 0, 0);">
+                                    style="width: 80px; height: 80px; object-fit: cover; 0bject-position:top; border: 1px solid rgb(172, 169, 169); border-radius:60%; color:rgb(0, 0, 0);">
                             </div>
                             <h6>Name: {{ $spost->name }}</h6>
                             <h6>Role: {{ $spost->role }}</h6>

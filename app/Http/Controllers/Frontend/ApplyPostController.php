@@ -114,7 +114,7 @@ class ApplyPostController extends Controller
             'subject_name'=>$request->subject_name,
             'salary'=>$request->salary,
             'status'=>$postUpdate->status,
-            'contact'=>$request->contact,
+            'contact'=>$postUpdate->contact,
             'address'=>$request->address,
             'image'=>$fileName
           ]);

@@ -64,7 +64,7 @@
                                         @endif
 
                                         <div class="d-flex v-card align-items-center">
-                                            <img src="{{url('/uploads/'.$post->image)}}" alt="Image" class="img-fluid mr-3">
+                                            <img src="{{url('/uploads/'.$post->image)}}" alt="img" style="width: 80px; height: 80px; object-fit: cover; object-position: top; border: 1px solid rgb(172, 169, 169); border-radius:60%; color:black;">
                                         </div>
                                         <h6>Name: {{$post->name}}</h6>                       
                                         <h6>Role: {{$post->role}}</h6>
@@ -118,7 +118,7 @@
                                             @endif
 
                                             <div class="d-flex v-card align-items-center">
-                                                <img src="{{url('/uploads/'.$post->image)}}" alt="Image" class="img-fluid mr-3">
+                                                <img src="{{url('/uploads/'.$post->image)}}" alt="img" style="width: 80px; height: 80px; object-fit: cover; object-position: top; border: 1px solid rgb(172, 169, 169); border-radius:60%; color:black;">
                                             </div>
                                             <h6>Name: {{$post->name}}</h6>                       
                                             <h6>Role: {{$post->role}}</h6>

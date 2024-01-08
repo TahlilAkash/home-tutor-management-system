@@ -21,6 +21,11 @@
     </div>
 
     <div class="form-group">
+      <label for="exampleInputContact1">Contact</label>
+      <input required  value="{{$memprofileVar->contact}}" type="number" name="contact" class="form-control" id="" placeholder="Contact">
+    </div>
+
+    <div class="form-group">
       <label for="exampleInputPassword1">Password</label>
       <input required name="password" type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
     </div>

@@ -3,6 +3,7 @@
 @section('content')
 
 <div class="container mt-5">
+    
     <!-- enctype="multipart/form-data" -->
     
         <form action="{{route('teacher.tuition.post.store')}}" method="post" enctype="multipart/form-data">
@@ -63,10 +64,10 @@
                 </select>
             </div>
 
-            <div class="form-group">
+            {{-- <div class="form-group">
                 <label for="">Contact: </label>
                 <input required type="number" name="contact" class="form-control" id="" placeholder="Contact">
-            </div>
+            </div> --}}
             
             <div class="form-group">
                 <label for="">Salary: </label>

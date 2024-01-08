@@ -15,7 +15,7 @@
 
                 </tr>
             </thead>
-            @foreach ($classts as $key => $classt)
+            @foreach ($classts->reverse() as $key => $classt)
                 <tr>
                     <th scope="row">{{ $key + 1 }}</th>
                     <!-- form name property -->

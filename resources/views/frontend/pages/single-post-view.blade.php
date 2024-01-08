@@ -18,7 +18,7 @@
                        
 
                         <div class="d-flex v-card align-items-center">
-                            <img src="{{url('/uploads/'.$singlepost->image)}}" alt="img" style="width: 50px; height: 50px; object-fit: cover; border: 1px solid rgb(172, 169, 169); border-radius:60%; color:black;">
+                            <img src="{{url('/uploads/'.$singlepost->image)}}" alt="img" style="width: 80px; height: 80px; object-fit: cover; object-position: top; border: 1px solid rgb(172, 169, 169); border-radius:60%; color:black;">
                         </div>
                         <h6>Name: {{$singlepost->name}}</h6>                       
                         <h6>Role: {{$singlepost->role}}</h6>

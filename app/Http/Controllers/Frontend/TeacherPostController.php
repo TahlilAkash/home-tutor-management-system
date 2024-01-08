@@ -29,8 +29,7 @@ class TeacherpostController extends Controller
             'class_list' => 'required',
             'subject_name'=> 'required',
             'salary'=>'required|numeric|between:1000,10000',
-            'contact' => 'required|regex:/^01[1-9][0-9]{8}$/|numeric',
-            // 'contact' => 'required|regex:/^(\+8801|8801|01)[1-9]\d{8}$/',
+            // 'contact' => 'required|regex:/^01[3-9][0-9]{8}$/|numeric',
 
         ]);
 
@@ -60,7 +59,7 @@ class TeacherpostController extends Controller
                 'class_list'=>$request->class_list,
                 'subject_name'=>$request->subject_name,
                 'salary'=>$request->salary,
-                'contact'=>$request->contact,
+                'contact'=>auth('member')->user()->contact,
                 'address'=>$request->address,
                 'status'=>'pending',
                 'image'=>$fileName,

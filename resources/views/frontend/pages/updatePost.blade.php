@@ -10,10 +10,10 @@
             <label for="exampleInputEmail1">Email address:</label>
             <input required value="{{$postEdit->email}}" name="email" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
         </div> --}}
-        <div class="form-group">
+        {{-- <div class="form-group">
             <label for="">Contact: </label>
             <input value="{{$postEdit->contact}}" type="tel" name="contact" class="form-control" id="" placeholder="Contact">
-        </div>
+        </div> --}}
         <div class="form-group">
             <label for="">Salary: </label>
             <input value="{{$postEdit->salary}}" required type="number" name="salary" class="form-control" id="" placeholder="Salary">

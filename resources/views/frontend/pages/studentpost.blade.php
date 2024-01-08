@@ -63,10 +63,10 @@
             </select>
         </div>
 
-        <div class="form-group">
+        {{-- <div class="form-group">
             <label for="">Contact: </label>
             <input type="number" name="contact" class="form-control" id="contact" placeholder="Contact" required >
-        </div>
+        </div> --}}
         
         <div class="form-group">
             <label for="">Salary: </label>

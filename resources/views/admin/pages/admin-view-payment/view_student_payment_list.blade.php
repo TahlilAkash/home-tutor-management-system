@@ -22,28 +22,28 @@
                 </thead>
 
                 <tbody>
-                    @php
+                    {{-- @php
                         $index = 1;
-                    @endphp
+                    @endphp --}}
                     @foreach ($paidStudent as $key => $singleUser)
-                        @for ($i = 0; $i < $singleUser->payment_count; $i++)
+                        {{-- @for ($i = 0; $i < $singleUser->payment_count; $i++) --}}
                             <tr>
-                                <td>{{ $index++ }}</td>
+                                {{-- <td>{{ $index++ }}</td> --}}
                                 <td>{{ $singleUser->name }}</td>
                                 {{-- <td>
                       <img style="border-radius: 60px; width : 60px; height:70px" src="{{url('/uploads/'.$singleUser->image)}}" alt="img">
                       </td> --}}
                                 <td>{{ $singleUser->email }}</td>
                                 <td>{{ $singleUser->role }}</td>
-                                @if($i==0)
+                                {{-- @if($i==0) --}}
                                 <td>{{$singleUser->tran_id}}</td>
-                                @else
-                                <td>{{$singleUser->tran_id+rand(100,900)}}</td>
-                                @endif
+                                {{-- @else --}}
+                                {{-- <td>{{$singleUser->tran_id+rand(100,900)}}</td>
+                                @endif --}}
                                 <td>{{ $singleUser->amount }}.BDT</td>
 
                             </tr>
-                        @endfor
+                        {{-- @endfor --}}
                     @endforeach
 
                 </tbody>

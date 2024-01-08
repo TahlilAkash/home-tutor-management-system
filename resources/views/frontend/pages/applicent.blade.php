@@ -9,7 +9,7 @@
             <div class="card-body text-center">
               <div class="mt-3 mb-4 d-flex justify-content-center">
                 <img src="{{url('/uploads/'. auth('member')->user()->image)}}"
-                class="mt-3 rounded-circle img-fluid" style="width: 100px; height: 100px; object-fit: cover; border: 2px solid #dddddd;      color: white;"  
+                class="mt-3 overflow-hidden rounded-circle img-fluid" style="width: 100px; height: 100px; object-fit: cover;  object-position: top;border: 2px solid #dddddd;      color: white;"  
                 alt="img" />
               </div>
                 
@@ -22,6 +22,8 @@
                 <h5 class="mb-2 text-white">Email :{{ auth('member')->user()->email }}</h5>
                 
                 <h5 class="mb-2 text-white">Role :{{ auth('member')->user()->role }}</h5>
+                <h5 class="mb-2 text-white">Contact :{{ auth('member')->user()->contact }}</h5>
+
 
                 <a class="btn btn-primary btn-rounded btn-lg text-white mb-3" href="{{Route('my.post',auth('member')->user()->id)}}">My Post</a>
                 <a class="btn btn-primary btn-rounded btn-lg text-white mb-3" href="{{Route('applicent',auth('member')->user()->id)}}">Applyed</a>
