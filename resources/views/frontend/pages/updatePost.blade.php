@@ -50,10 +50,10 @@
             <label for="">Address:</label>
             <textarea class="form-control" name="address" id="" cols="15" rows="5">{{$postEdit->address}}</textarea>
         </div>
-        <div class="form-group">
+        {{-- <div class="form-group">
             <label for="">Update Your Image: </label>
             <input value="{{$postEdit->image}}" name="image" type="file" class="form-control">
-        </div>
+        </div> --}}
         <button type="submit" class="btn btn-primary">Submit</button>
     </form>
 

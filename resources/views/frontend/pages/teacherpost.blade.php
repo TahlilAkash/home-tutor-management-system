@@ -83,10 +83,10 @@
             
 
 
-            <div class="form-group">
+            {{-- <div class="form-group">
                 <label for="">Upload Your Image: </label>
                 <input name="image" type="file" class="form-control">
-            </div>
+            </div> --}}
 
             <button type="submit" class="btn btn-primary">Submit</button>
         </form>

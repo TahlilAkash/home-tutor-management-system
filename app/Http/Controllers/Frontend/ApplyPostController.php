@@ -88,7 +88,7 @@ class ApplyPostController extends Controller
       return view('frontend.pages.updatePost',compact('postEdit','subjects','classts'));
 
     }
-
+    // Update My post ................
     public function update(Request $request,$id)
     {
         $postUpdate=TuitionPost::find($id);
@@ -116,11 +116,22 @@ class ApplyPostController extends Controller
             'status'=>$postUpdate->status,
             'contact'=>$postUpdate->contact,
             'address'=>$request->address,
-            'image'=>$fileName
+            'image'=>$postUpdate->image,
           ]);
 
           notify()->success('Your post updated successfully.');
           return redirect()->back();
         }
     }
+     // delete My post ................
+    //  public function delete($id){
+    //     $postdelete=TuitionPost::find($id);
+    //     if($postdelete)
+    //     {
+    //           $postdelete->delete();
+    //     }
+      
+    //     notify()->success('Post Deleted Successfully.');
+    //     return redirect()->back();
+    //  }
 }

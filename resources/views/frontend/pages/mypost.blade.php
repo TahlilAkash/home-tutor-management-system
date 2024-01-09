@@ -80,6 +80,8 @@
                               
                               <a class="btn btn-danger" href="{{Route('request',$detail->id)}}">View Request</a>
                               <a class="btn btn-danger" href="{{Route('my.post.edit',$detail->id)}}">Edit</a>
+                              {{-- <a class="btn btn-danger" style="color:red" href="{{Route('my.post.delete',$detail->id)}}">delete</a> --}}
+
                               
                         </tr>
                   @endforeach  

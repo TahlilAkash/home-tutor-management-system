@@ -29,6 +29,7 @@
                         {{-- @for ($i = 0; $i < $singleUser->payment_count; $i++) --}}
                             <tr>
                                 {{-- <td>{{ $index++ }}</td> --}}
+                                <td>{{ $key + 1 }}</td>
                                 <td>{{ $singleUser->name }}</td>
                                 {{-- <td>
                       <img style="border-radius: 60px; width : 60px; height:70px" src="{{url('/uploads/'.$singleUser->image)}}" alt="img">

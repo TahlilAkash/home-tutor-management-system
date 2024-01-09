@@ -59,7 +59,7 @@ class StudentpostController extends Controller
                 'contact'=>auth('member')->user()->contact,
                 'address'=>$request->address,
                 'status'=>'pending',
-                'image'=>$fileName,
+                'image'=>auth('member')->user()->image,
                 
             ]);
         return redirect()->route('home');
