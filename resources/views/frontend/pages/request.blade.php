@@ -61,9 +61,10 @@
                     <th scope="col">#</th>
                     <th scope="col">Name</th>
                     <th scope="col">Email</th>
+                    <th scope="col">Contact</th>
+
                     <th scope="col">Class</th>
                     <th scope="col">Subject</th>
-                    <th scope="col">Contact</th>
                     <th scope="col">Address</th>
                     <th scope="col">Salary</th>
                     <th scope="col">Status</th>
@@ -76,9 +77,10 @@
                             <th scope="row">{{$loop->iteration}}</th>
                             <td>{{$details->member->name}}</td>
                             <td>{{$details->member->email}}</td>
+                            <td>{{$details->member->contact}}</td>
+
                             <td>{{$details->TuitionPost->class_list}}</td>
                             <td>{{$details->TuitionPost->subject_name}}</td>
-                            <td>{{$details->TuitionPost->contact}}</td>
                             <td>{{$details->TuitionPost->address}}</td>
                             <td>{{$details->TuitionPost->salary}}</td>
                             <td>{{$details->status}}</td>
