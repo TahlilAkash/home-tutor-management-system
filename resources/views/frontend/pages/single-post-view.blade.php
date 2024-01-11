@@ -28,7 +28,7 @@
                         <h6>Subject: {{$singlepost->subject_name}}</h6>
                         <h6>Salary: {{$singlepost->salary}} .BDT</h6>
                         <h6>Contact: {{$singlepost->contact}}</h6>
-                        
+                        {{-- applications method is used to make relation with the tuition post  model table --}}
                         @php
                             $userApplied = $singlepost->applications()->where('user_id', auth('member')->user()->id)->get();
                         @endphp

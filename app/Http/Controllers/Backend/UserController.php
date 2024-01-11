@@ -55,13 +55,14 @@ class UserController extends Controller
     }
 
     //user authentication strated
-    //Member create from admin //
+
+    //Member create from admin ................................
     public function list(){
         $users=Member::all(); //           Member  = Model Name
         return view('admin.pages.users.list',compact('users'));
     }
 
-    // user form creation
+    // member form creation.........................................
     public function createForm(){
         return view('admin.pages.users.create');
     }
@@ -73,6 +74,7 @@ class UserController extends Controller
             'user_name'=>'required',
             'role'=>'required',
             'user_email'=>'required|email',
+            'contact' => 'required|regex:/^01[3-9][0-9]{8}$/|numeric',
             'user_password'=>'required|min:6',
         ]);
 
@@ -97,6 +99,7 @@ class UserController extends Controller
             'role'=>$request->role,
             'image'=>$fileName,
             'email'=>$request->user_email,
+            'contact'=>$request->contact,
             'password'=>bcrypt($request->user_password),
         ]);
 
@@ -106,7 +109,7 @@ class UserController extends Controller
     }
 
     // delete user =member
-    // delete method 
+    // delete method ..........................
     public function delete_user($id)
     {
         // dd($id);
@@ -122,7 +125,7 @@ class UserController extends Controller
           
     }
 
-    //edit member
+    //edit member................................................
     public function edit_user($id)
     {
         $member=Member::find($id);
@@ -130,7 +133,7 @@ class UserController extends Controller
         return view('admin.pages.users.edit_user',compact('member'));// Member Model is assigned to member variable
             
     }
-    // update member info
+    // update member info.........................................................
     public function update_user(Request $request,$id)
     {
         $member=Member::find($id);
@@ -151,7 +154,9 @@ class UserController extends Controller
           $member->update([
             'name'=>$request->user_name,
             'email'=>$request->user_email,
-            'image'=>$fileName
+            'image'=>$fileName,
+            'contact'=>$request->contact,
+
           ]);
 
           notify()->success('User updated successfully.');

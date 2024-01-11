@@ -8,14 +8,14 @@
             </div>
 
             <div style="position: absolute; margin-left: 130px; z-index:30">
-                @if (auth('member')->check())
+                {{-- @if (auth('member')->check()) --}}
                     <form action="{{ route('subject.search') }}" method="get">
                         <input type="text" class="form-control mt-1" style="width: 200px; display: inline-block;"
                             placeholder="Search by subject.." name="search">
                         <button type="submit" class="btn btn-success"
-                            style="border: 2px solid green; background-color: green; color: white;">Search</button>
+                            style="border: 2px solid; background-color: green; color: white;">Search</button>
                     </form>
-                @endif
+                {{-- @endif --}}
             </div>
 
             <div class="col-9 text-right">

@@ -1,6 +1,6 @@
 @extends('frontend.master')
 @section('content')
-    <div class="site-section-cover overlay h-25 " style="background-color:#303030; height:50%;">
+    <div class="site-section-cover overlay  " style="background-color:#303030; min-height:60vh !important;">
 
         <div class="container">
 
@@ -8,7 +8,7 @@
 
             <!-- end search form only when logged in -->
 
-            <div class="row align-items-center justify-content-center">
+            <div class="row align-items-center justify-content-center"style="min-height:60vh;">
                 <div class="col-lg-10 text-center">
                     <h1>Home <strong>Tutor</strong> Management<strong> System</strong></h1>
                 </div>
@@ -92,7 +92,7 @@
 
                 </div>
             </div>
-            <div class="row ">
+            <div class="row">
                 @foreach ($tuitionposts as $tpost)
                     {{-- <a href="{{route('s_t.post.singleview',$tpost->id)}}"> --}}
                     <div class="col-lg-4 mb-4 mb-lg-0 ">
@@ -142,7 +142,7 @@
             </div>
 
             {{-- Student Post --}}
-            <div class="row ">
+            <div class="row">
                 @foreach ($studentposts as $spost)
                     {{-- <a href="{{route('s_t.post.singleview',$spost->id)}}"> --}}
                     <div class="col-lg-4 mb-4 mb-lg-0 ">

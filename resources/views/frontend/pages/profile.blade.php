@@ -86,7 +86,7 @@
                                     <td>{{ $applicent->TuitionPost->subject_name }}</td>
                                     <td>{{ $applicent->TuitionPost->contact }}</td>
                                     <td>{{ $applicent->TuitionPost->address }}</td>
-                                    <td>{{ $applicent->TuitionPost->salary }}</td>
+                                    <td>{{ $applicent->TuitionPost->salary }}.BDT</td>
                                     <td>{{ $applicent->status }}</td>
                                 </tr>
                             @endforeach

@@ -3,10 +3,10 @@
 @section('content')
     <div class="container">
         {{-- report generate --}}
-        <button class="btn btn-success"  onclick="printContent('printDiv')">Print</button>
-     <div id="printDiv">
+        <button class="btn btn-success" onclick="printContent('printDiv')">Print</button>
+        <div id="printDiv">
             {{-- end of report generate part --}}
-            
+
             <h1 style="font-size: 20px; font-weight: bold;">Teacher Payment List</h1>
 
             <table class="table">

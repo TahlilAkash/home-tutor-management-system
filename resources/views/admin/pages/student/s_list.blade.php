@@ -37,7 +37,7 @@
                             <td>{{ $studentList->contact }}</td>
                             <td>{{ $studentList->address }}</td>
                             <td><img class="img" src="{{ url('/uploads/' . $studentList->image) }}"
-                                    style="width: 50px; height: 50px; object-fit: cover; border: 1px solid rgb(172, 169, 169); border-radius:60%; color:black;"
+                                    style="width: 50px; height: 50px; object-fit: cover; object-position: top; border: 1px solid rgb(172, 169, 169); border-radius:60%; color:black;"
                                     alt="img">
                             </td>
                             <td>
@@ -47,7 +47,7 @@
                             </td>
                             <td>
                                 <a href="{{ route('teacherlist.edit', $studentList->id) }}"
-                                    class="btn btn-success m-1">Edit</a>
+                                    class="btn btn-success mb-1">Update</a>
                                 <a href="{{ route('studentlist.delete', $studentList->id) }}"
                                     class="btn btn-danger">Delete</a>
                             </td>
@@ -65,12 +65,14 @@
 </div>
 <style>
     .post-status {
+        
         padding: 3px 5px;
         border-radius: 9px;
         font-weight: bold;
     }
 
     .post-status.pending {
+        
         color: white;
         background-color: red;
     }

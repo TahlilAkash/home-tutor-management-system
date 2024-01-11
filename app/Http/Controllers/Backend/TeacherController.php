@@ -10,13 +10,14 @@ use Illuminate\Http\Request;
 
 class TeacherController extends Controller
 {
+    // Teacher post list view................................................
     public function Teacherlist(){
         $TeacherList=TuitionPost::where('role','tutor')->get();
         return view('admin.pages.teacher.teacher_list',compact('TeacherList'));
     }
 
 
-    
+    //delete.......................................................................
     public function delete($id)
     {
       $teacherDelete=TuitionPost::find($id);
@@ -25,10 +26,10 @@ class TeacherController extends Controller
         $teacherDelete->delete();
       }
 
-      notify()->success('Teacher Deleted Successfully.');
+      notify()->success('Teacher Post Deleted Successfully.');
       return redirect()->back();
     }
-    
+    // edit.........................................................................(student & teacher both)
     public function edit($id)
     {
       $teacherEdit=TuitionPost::find($id);
@@ -40,7 +41,7 @@ class TeacherController extends Controller
 
     }
 
-
+  //  Update Teahcer & Student  post approved..............................................
     public function update(Request $request,$id)
     {
       // dd($request->all());

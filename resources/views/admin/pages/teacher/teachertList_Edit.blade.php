@@ -4,7 +4,7 @@
 
 
 <div class="container">
-    <h2 class="mb-3" style="font-size: 30px">Update {{$teacherEdit->role}} Post Status</h2>
+    <h2 class="mb-3" style="font-size: 20px">Update {{$teacherEdit->role}} Post Status</h2>
     <!-- enctype="multipart/form-data" -->
     <form action="{{route('teacherlist.update',$teacherEdit->id)}}" method="post" enctype="multipart/form-data">
         @csrf

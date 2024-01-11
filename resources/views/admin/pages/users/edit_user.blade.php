@@ -50,6 +50,11 @@
                 <input value="{{$member->image}}" name="user_image" type="file" class="form-control">
             </div>
 
+            <div class="form-group">
+                <label for="">Contact</label>
+                <input required  value="{{$member->contact}}" type="number" name="contact" class="form-control" id="" placeholder="Contact">
+            </div>
+
 
 
             <button type="submit" class="btn btn-primary text-dark">Submit</button>

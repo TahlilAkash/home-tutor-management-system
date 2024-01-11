@@ -37,7 +37,7 @@
                             <td>{{ $TList->contact }}</td>
                             <td>{{ $TList->address }}</td>
                             <td><img class="img" src="{{ url('/uploads/' . $TList->image) }}"
-                                    style="width: 50px; height: 50px; object-fit: cover; border: 1px solid rgb(172, 169, 169); border-radius:60%; color:black;"
+                                    style="width: 50px; height: 50px; object-fit: cover; object-position: top; border: 1px solid rgb(172, 169, 169); border-radius:60%; color:black;"
                                     alt="img"></td>
                             <td>
                                 <span class="post-status {{ $TList->status }}">
@@ -45,7 +45,7 @@
                                 </span>
                             </td>
                             <td>
-                                <a href="{{ route('teacherlist.edit', $TList->id) }}" class="btn btn-success m-1">Edit</a>
+                                <a href="{{ route('teacherlist.edit', $TList->id) }}" class="btn btn-success mb-1">Update</a>
                                 <a href="{{ route('teacherlist.delete', $TList->id) }}" class="btn btn-danger">Delete</a>
                             </td>
                         </tr>

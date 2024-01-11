@@ -360,14 +360,7 @@
             <div class="container">
 
                 <!-- welcome title  home blade e included-->
-                <!-- <div class="row justify-content-center">
-                    <div class="col-lg-7 text-center mb-5">
-                        <div class="heading">
-                            <span class="caption">Welcome To Tuition Management Site</span>
-                            
-                        </div>
-                    </div>
-                </div> -->
+               
                 <!-- end of welcome title  home blade e included-->
 
 

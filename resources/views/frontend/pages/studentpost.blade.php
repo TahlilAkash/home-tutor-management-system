@@ -30,16 +30,10 @@
 
                 <option value="Four">Four</option>
                 <option value="Five">Five</option>
-                <option value="Six">Six</option>
-                <option value="Seven">Seven</option>
-                <option value="Eight">Eight</option>
-                <option value="Nine">Nine</option>
-                <option value="Ten">Ten</option>
-                <option value="Eleven">Eleven</option>
-                <option value="Twelve">Twelve</option>
+                
             </select> --}}
             <select required class="form-control" name="class_list" id="">
-                <option style="display: none" >--select class--</option>
+                {{-- <option style="display: none" >--select class--</option> --}}
                 <!-- select option from subject table -->
 
                 @foreach ($classts as $classt)
@@ -53,8 +47,8 @@
         <div class="form-group">
             <label for="">Subject Name</label>
             {{-- <input required type="text" class="form-control" id="" name="subject_name" placeholder="Enter Subject Name"> --}}
-            <select required class="form-control" name="subject_name" id="">
-                <option style="display: none" >--select subject--</option>
+            <select required class="form-control" name="subject_name" id="" >
+                {{-- <option style="display: none" >--select subject--</option> --}}
                 <!-- select option from subject table -->
                 @foreach ($subjects as $subject)
                 <option value="{{$subject->name}}">{{$subject->name}}</option>
@@ -79,8 +73,6 @@
             {{-- <textarea class="form-control" name="address" id="" cols="15" rows="5"></textarea> --}}
             <textarea class="form-control" name="address" id="address" cols="15" rows="5" required></textarea>
         </div>
-
-        
 
 
         {{-- <div class="form-group">

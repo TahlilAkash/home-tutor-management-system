@@ -1,7 +1,7 @@
 @extends('admin.master')
 @section('content')
     <div class="container">
-
+        
         <h3 style="font-size: 20px; font-weight: bold;">Subject List</h3>
 
         <a class ="btn btn-success mb-2 "href="{{ route('subject_create.form') }} ">Create Subject </a>
@@ -37,5 +37,5 @@
         </table>
 
     </div>
-    {{ $subjects->links() }}
+    {{-- {{ $subjects->links() }} --}}
 @endsection

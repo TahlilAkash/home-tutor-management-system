@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
     <link rel="stylesheet" href="https://preview.colorlib.com/theme/bootstrap/login-form-18/css/style.css">
-
+</head>
 <body>
     <section class="ftco-section">
         <div class="container">
@@ -25,7 +25,7 @@
 
                         <form action="{{route('admin.login.post')}}"method="post">
                             @csrf
-                            <div class="form-outline mb-4">
+                            <div class="form-outline">
                                     <input required name="email" type="email" id="typeEmailX-2" class="form-control form-control-lg" />
                                     <label class="form-label" for="typeEmailX-2">Email</label>
                                     @error('email')
@@ -34,7 +34,7 @@
                             </div>
 
 
-                            <div class="form-outline mb-4">
+                            <div class="form-outline ">
                                 <input required name="password" type="password" id="typePasswordX-2" class="form-control form-control-lg" />
                                 <label class="form-label" for="typePasswordX-2">Password</label>
                                 @error('password')

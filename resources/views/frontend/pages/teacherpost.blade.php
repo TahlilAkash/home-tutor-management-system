@@ -23,24 +23,14 @@
 
             </div> --}}
 
-            
-
             <div class="form-group">
                 <label for="">Class List </label>
                 {{-- <select required class="form-control" name="class_list" id="">
-
                     <option value="Four">Four</option>
                     <option value="Five">Five</option>
-                    <option value="Six">Six</option>
-                    <option value="Seven">Seven</option>
-                    <option value="Eight">Eight</option>
-                    <option value="Nine">Nine</option>
-                    <option value="Ten">Ten</option>
-                    <option value="Eleven">Eleven</option>
-                    <option value="Twelve">Twelve</option>
                 </select> --}}
                 <select required class="form-control" name="class_list" id="">
-                    <option style="display: none" >--select class--</option>
+                    {{-- <option style="display: none" >--select class--</option> --}}
                     <!-- select option from subject table -->
 
                     @foreach ($classts as $classt)
@@ -55,7 +45,7 @@
                 <label for="">Subject Name</label>
                 
                 <select required class="form-control" name="subject_name" id="">
-                    <option style="display: none" >--select subject--</option>
+                    {{-- <option style="display: none" >--select subject--</option> --}}
                     <!-- select option from subject table -->
                     @foreach ($subjects as $subject)
                     <option value="{{$subject->name}}">{{$subject->name}}</option>
@@ -63,6 +53,18 @@
         
                 </select>
             </div>
+
+            {{-- <div class="form-group">
+                <label for="">Subject description</label>
+                
+                <select required class="form-control" name="subject_name" id="">
+                    
+                    @foreach ($subjects as $subject)
+                    <option value="{{$subject->description}}">{{$subject->description}}</option>
+                    @endforeach
+        
+                </select>
+            </div> --}}
 
             {{-- <div class="form-group">
                 <label for="">Contact: </label>
@@ -80,9 +82,6 @@
                 <textarea class="form-control" name="address" id="address" cols="15" rows="5" required></textarea>
             </div>
 
-            
-
-
             {{-- <div class="form-group">
                 <label for="">Upload Your Image: </label>
                 <input name="image" type="file" class="form-control">
@@ -91,6 +90,5 @@
             <button type="submit" class="btn btn-primary">Submit</button>
         </form>
     
-
 </div>
 @endsection

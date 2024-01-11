@@ -11,7 +11,7 @@ use Illuminate\Http\Request;
 
 class ApplyPostController extends Controller
 {
-    // apply tuition post method
+    // apply tuition post method...............
     public function applyNow($postId){ 
         //dd($id); 
         ApplyPost::create([

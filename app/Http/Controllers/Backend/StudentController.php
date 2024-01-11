@@ -10,13 +10,14 @@ use Illuminate\Http\Request;
 
 class StudentController extends Controller
 {
+    // Student post list.................................................
     public function Studentlist(){
         $Students=TuitionPost::where('role','student')->get();
         //dd($Students);
         return view('admin.pages.student.s_list',compact('Students'));
     }
 
-    
+    // delete.............................................................
     public function delete($id)
     {
       $stuDelete=TuitionPost::find($id);
@@ -25,55 +26,56 @@ class StudentController extends Controller
         $stuDelete->delete();
       }
 
-      notify()->success('Student Deleted Successfully.');
+      notify()->success('Student post Deleted Successfully.');
       return redirect()->back();
     }
 
+     // edit & delete   attached with teaher edit delete...........................................
 
-    public function edit($id)
-    {
-      $stuEdit=TuitionPost::find($id);
+    // public function edit($id)
+    // {
+    //   $stuEdit=TuitionPost::find($id);
       
-      $subjects=Subject::all();
-      $classts=Classt::all();
+    //   $subjects=Subject::all();
+    //   $classts=Classt::all();
     
-      return view('admin.pages.student.studentList_Edit',compact('stuEdit','subjects','classts'));
+    //   return view('admin.pages.student.studentList_Edit',compact('stuEdit','subjects','classts'));
 
-    }
+    // }
 
-    public function update(Request $request,$id)
-    {
-        $stuUpdate=TuitionPost::find($id);
+    // public function update(Request $request,$id)
+    // {
+    //     $stuUpdate=TuitionPost::find($id);
 
-        if($stuUpdate)
-        {
+    //     if($stuUpdate)
+    //     {
 
-          $fileName=$stuUpdate->image;
-          if($request->hasFile('image'))
-          {
-              $file=$request->file('image');
-              $fileName=date('Ymdhis').'.'.$file->getClientOriginalExtension();
+    //       $fileName=$stuUpdate->image;
+    //       if($request->hasFile('image'))
+    //       {
+    //           $file=$request->file('image');
+    //           $fileName=date('Ymdhis').'.'.$file->getClientOriginalExtension();
 
-              $file->storeAs('/uploads',$fileName);
+    //           $file->storeAs('/uploads',$fileName);
 
-          }
+    //       }
 
-          $stuUpdate->update([ // database column name-- form name property
-            'name'=>$request->name,
-            'role'=>$request->role,
-            'email'=>$request->email,
-            'class_list'=>$request->class_list,
-            'subject_name'=>$request->subject_name,
-            'salary'=>$request->salary,
-            'status'=>$request->status,
-            'contact'=>$request->contact,
-            'address'=>$request->address,
+    //       $stuUpdate->update([ // database column name-- form name property
+    //         'name'=>$request->name,
+    //         'role'=>$request->role,
+    //         'email'=>$request->email,
+    //         'class_list'=>$request->class_list,
+    //         'subject_name'=>$request->subject_name,
+    //         'salary'=>$request->salary,
+    //         'status'=>$request->status,
+    //         'contact'=>$request->contact,
+    //         'address'=>$request->address,
 
-            'image'=>$fileName
-          ]);
+    //         'image'=>$fileName
+    //       ]);
 
-          notify()->success('Student List updated successfully.');
-          return redirect()->back();
-        }
-    }
+    //       notify()->success('Student List updated successfully.');
+    //       return redirect()->back();
+    //     }
+    // }
 }

@@ -11,6 +11,7 @@ use Illuminate\Support\Facades\Validator;
 
 class MemberController extends Controller
 {
+    //registration form.........................................
     public function registration()
     {
         // $tuition_apply=TuitionApply::all();
@@ -18,17 +19,6 @@ class MemberController extends Controller
         
     }
     
-    // profile view
-    public function profile()
-    {
-        $applicentDetail=ApplyPost::with('TuitionPost')->where('user_id',auth('member')->user()->id)->where('status','accepted')->get();
-        // dd($applicentDetail->all());
-        return view('frontend.pages.profile',compact('applicentDetail'));
-
-        // $apply_posts=ApplyPost::where('status','accepted')->where('user_id',auth('member')->user()->id)->get();
-        // return view('frontend.pages.profile',compact('apply_posts'));
-    }
-
 
     // store memeber data to db web registration
     public function store(Request $request)
@@ -59,7 +49,7 @@ class MemberController extends Controller
             $file->storeAs('/uploads',$fileName);
 
         }
-        // to create memeber when registration 
+        // to create memeber when registration .........................................putting data of member input to db column
         Member::create([
             'name' => $request->name,
             'email' => $request->email,
@@ -75,12 +65,12 @@ class MemberController extends Controller
     }
 
 
-// log in
+    // log in form.....................................................................................
     public function login()
     {
         return view('frontend.pages.login');
     }
-
+    // do the log in data match..........................................................................
     public function doLogin(Request $request)
     {   
         // dd($request->all());
@@ -115,8 +105,17 @@ class MemberController extends Controller
         return redirect()->route('home');
     }
 
+    // profile view..........................................................................accepted apply
+    public function profile()
+    {
+        $applicentDetail=ApplyPost::with('TuitionPost')->where('user_id',auth('member')->user()->id)->where('status','accepted')->get();
+        // dd($applicentDetail->all());  TuitionPost =model name
+        return view('frontend.pages.profile',compact('applicentDetail'));
 
-    // member profile edit
+        // $apply_posts=ApplyPost::where('status','accepted')->where('user_id',auth('member')->user()->id)->get();
+        // return view('frontend.pages.profile',compact('apply_posts'));
+    }
+    // member profile edit................................................................
     public function profileEdit ($id){
         $memprofileVar=Member::find($id);
         return view('frontend.pages.ProfileEdit.editmemberofile',compact('memprofileVar'));

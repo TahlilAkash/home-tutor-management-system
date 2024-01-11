@@ -48,13 +48,14 @@ Route::post('/login',[MemberController::class,'doLogin'])->name('member.do.login
 
 
 Route::group(['middleware'=>'frontendAuth'],function(){
-        // member profile view
+
+    // member profile view & accepted apply.........................................................
     Route::get('/profile', [MemberController::class, 'profile'])->name('profile.view'); // member profile view
     Route::get('/member/profile/edit/{id}]',[MemberController::class,'profileEdit'])->name('profile.edit');
     Route::put('/member/profile/edit/update/{id}',[MemberController::class,'profileUpdate'])->name('profile.update');
     Route::get('/logout',[MemberController::class, 'logout'])->name('member.logout');
 
-    // apply to the tuition post
+    // apply to the tuition post..............................................................
     Route::get('/apply-now/{tuitionPost_id}',[ApplyPostController::class,'applyNow'])->name('apply.post.now');
     Route::get('/cancel-apply/{tuitionPost_id}',[ApplyPostController::class,'cancelApply'])->name('apply.cancel');
     Route::get('/accept-apply/{tuitionPost_id}',[ApplyPostController::class,'acceptApply'])->name('apply.accepted');
@@ -73,7 +74,10 @@ Route::group(['middleware'=>'frontendAuth'],function(){
     
     //Route::get('/myPost/{id}',[MyPostController::class,'myPost'])->name('myPost');
 
-     // I applied on the post  (pendig post)........................
+     
+    
+    
+    // I applied on the post  (pendig post)........................
     Route::get('/applicants/{id}',[ApplyPostController::class,'applicent'])->name('applicent');
     //my post
     Route::get('/my/post/{id}',[ApplyPostController::class,'myPost'])->name('my.post');
@@ -81,20 +85,20 @@ Route::group(['middleware'=>'frontendAuth'],function(){
 //     Route::get('/my/request/edit/{id}',[ApplyPostController::class,'request_edit'])->name('request.edit');
     Route::get('/my/post/edit/{id}', [ApplyPostController::class, 'edit'])->name('my.post.edit');
     Route::put('/my/post/update/{id}',[ApplyPostController::class, 'update'])->name('my.post.update');
-//     Route::get('/my/post/delete/{id}',[ApplyPostController::class, 'delete'])->name('my.post.delete'); 
+            //Route::get('/my/post/delete/{id}',[ApplyPostController::class, 'delete'])->name('my.post.delete'); 
 
 
 
-    // search option
+    // search option..............................................
     Route::get('/search-subject',[FrontendHomeController::class,'search'])->name('subject.search'); // header blade e serach from
     
-   // Buy premium post
+   // Buy premium post......................................................................................
     Route::get('/buy-premium',[BuyPremiumController::class, 'buyPremium'])->name('buyPremium.post');
     Route::get('/buy/subscription/{id}',[BuyPremiumController::class, 'subscriptionPurchase'])->name('buy.subscription');
 
 
     // ssl web
-    // SSLCOMMERZ Start
+    // SSLCOMMERZ Start....................
         Route::get('/example1', [SslCommerzPaymentController::class, 'exampleEasyCheckout']);
         Route::get('/example2', [SslCommerzPaymentController::class, 'exampleHostedCheckout']);
 
@@ -112,7 +116,7 @@ Route::group(['middleware'=>'frontendAuth'],function(){
 });
 
 Route::group(['prefix'=>'admin'],function(){
-// admin
+// admin ...................................
 Route::get('/login', [UserController::class, 'loginForm'])->name('admin.login');
 Route::post('/login-form-post', [UserController::class, 'loginPost'])->name('admin.login.post');
 
@@ -125,7 +129,7 @@ Route::group(['middleware' => 'auth'], function () {
         //Admin dashboard to count in small 
         
 
-        // user=member
+        // user=member...................................................................
         Route::get('/users',[UserController::class, 'list'])->name('user.list');
         Route::get('/users/delete/{id}', [UserController::class, 'delete_user'])->name('user.delete');
         Route::get('/users/edit/{id}', [UserController::class, 'edit_user'])->name('user.edit');
@@ -135,23 +139,24 @@ Route::group(['middleware' => 'auth'], function () {
         Route::post('/users/store',[UserController::class, 'store'])->name('users.store');
 
 
-        // admin panel student list
+        // admin panel student post list.................................................................
+
         Route::get('/studentlist', [StudentController::class, 'Studentlist'])->name('student.list');
         Route::get('/studentlist/delete/{id}', [StudentController::class, 'delete'])->name('studentlist.delete');
                 // student post edit is attach with teacher/student url in teacher controller
-        Route::get('/studentlist/edit/{id}', [StudentController::class, 'edit'])->name('studentlist.edit');
-        Route::put('/studentlist/update/{id}',[StudentController::class, 'update'])->name('studentlist.update');
+                 // Route::get('/studentlist/edit/{id}', [StudentController::class, 'edit'])->name('studentlist.edit');
+                 // Route::put('/studentlist/update/{id}',[StudentController::class, 'update'])->name('studentlist.update');
         
         
-        // admin panel teacher list
+        // admin panel teacher post list...............................
         Route::get('/teacherlist', [TeacherController::class, 'Teacherlist'])->name('teacher.list');
         // here teacher & student post edit= approved by admin
         Route::get('/teacherlist/delete/{id}',[TeacherController::class,'delete'])->name('teacherlist.delete');
         Route::get('/teacherlist/studentlist/edit/{id}', [TeacherController::class, 'edit'])->name('teacherlist.edit');
-        Route::put('/teacherlist/update/{id}',[TeacherController::class, 'update'])->name('teacherlist.update');
+        Route::put('/teacherlist/stedentlist/update/{id}',[TeacherController::class, 'update'])->name('teacherlist.update');
        
 
-        // subject
+        // subject...................................................................
         Route::get('/subject/list', [SubjectController::class, 'Subject'])->name('subject.list');
         
         Route::get('/subject/delete/{id}', [SubjectController::class, 'delete'])->name('subject.delete');
@@ -161,7 +166,7 @@ Route::group(['middleware' => 'auth'], function () {
         Route::get('/subject/form', [SubjectController::class, 'Create_form'])->name('subject_create.form');
         Route::post('/subject/store', [SubjectController::class, 'Store'])->name('subject.store');
 
-        //class
+        //class.........................................................................................
         Route::get('/class/list', [TclassController::class, 'Class_list'])->name('class.list');
 
         Route::get('/class/delete/{id}', [TclassController::class, 'delete'])->name('class.delete');
@@ -171,9 +176,8 @@ Route::group(['middleware' => 'auth'], function () {
         Route::get('/class/form', [TclassController::class, 'Create_form'])->name('class.form');
         Route::post('/class/store', [TclassController::class, 'store_form'])->name('class.store');
 
-        //Admin view Student payment list
+        //Admin view Student & Teacher payment list............................................................
         Route::get('/payment/view/student', [PaymentOfmemberController::class, 'view_student_payment'])->name('student.payment.list');
-        //Admin view teacher payment list
         Route::get('/payment/view/teacher', [PaymentOfmemberController::class, 'view_teacher_payment'])->name('teacher.payment.list');
 
         // institute
@@ -190,6 +194,3 @@ Route::group(['middleware' => 'auth'], function () {
 
 });
 
-//Route::get('/about',[AboutController::class,'AboutPage'])->name(aboutpage);
-
-//Route::get('/contacts',[ContactsController::class,'Contacts']);

@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\Validator;
 
 class TclassController extends Controller
 {
-    // delete
+    // delete.................................................
     public function delete($id)
     {
         // dd($id);
@@ -24,7 +24,7 @@ class TclassController extends Controller
         return redirect()->back();
           
     }
-    // edit means just view
+    // edit means just view // edit.....................................................
     public function edit($id)
     {
         $classt=Classt::find($id);
@@ -33,7 +33,7 @@ class TclassController extends Controller
             
     }
 
-    //update
+    //update.......................................................................
     public function update(Request $request,$id){
         $classt=Classt::find($id);
 
@@ -52,8 +52,8 @@ class TclassController extends Controller
     
     
     public function Class_list(){
-        //retrive from database
-        $classts=Classt::all();// table name -- model name
+        //retrive from database..............................................................
+        $classts=Classt::get();// variable name -- model name
         return view('admin.pages.classt.class_list',compact('classts'));
     }
 
@@ -63,7 +63,7 @@ class TclassController extends Controller
 
     public function store_form(Request $request){
         //dd($request->all());
-        //model mame
+        
         // storing to the database
         $validate=Validator::make($request->all(),[
             //name property of  form 

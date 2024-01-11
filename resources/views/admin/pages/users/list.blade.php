@@ -15,6 +15,7 @@
                     <th scope="col">Image</th>
                     <th scope="col">Email</th>
                     <th scope="col">Role</th>
+                    <th scope="col">Contact</th>
                     <th scope="col">Action</th>
                 </tr>
             </thead>
@@ -25,11 +26,14 @@
                         <td>{{ $singleUser->name }}</td>
                         <td>
                             <img class="user-image"
-                                style="width : 70px; height:70px; object-fit: cover; border: 1px solid rgb(172, 169, 169); border-radius:60%; color:black;"
+                                style="width : 70px; height:70px; object-fit: cover; object-position: top; border: 1px solid rgb(172, 169, 169); border-radius:60%; color:black;"
                                 src="{{ url('/uploads/' . $singleUser->image) }}" alt="img">
                         </td>
                         <td>{{ $singleUser->email }}</td>
+
                         <td>{{ $singleUser->role }}</td>
+                        <td>{{ $singleUser->contact }}</td>
+
                         <td>
                             {{-- <a class="btn btn-success" href="">View</a> --}}
                             <a class="btn btn-primary" href="{{ route('user.edit', $singleUser->id) }}">Edit</a>

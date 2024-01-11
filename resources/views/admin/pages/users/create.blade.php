@@ -53,6 +53,11 @@
 
             </div>
 
+            <div class="form-group">
+                <label for="">Contact: </label>
+                <input required type="number" name="contact" class="form-control" id="" placeholder="Contact">
+            </div>
+
 
             <div class="form-group">
                 <label for="">Upload Image: </label>
