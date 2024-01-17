@@ -28,7 +28,7 @@ class TeacherpostController extends Controller
             'role'=>'required',
             'class_list' => 'required',
             'subject_name'=> 'required',
-            'salary'=>'required|numeric|between:1000,10000',
+            'salary'=>'required|numeric|between:1,10000',
             // 'contact' => 'required|regex:/^01[3-9][0-9]{8}$/|numeric',
 
         ]);

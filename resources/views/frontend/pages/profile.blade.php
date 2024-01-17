@@ -36,20 +36,7 @@
                             <a class="btn btn-primary btn-rounded btn-lg text-white mb-3"
                                 href="{{ Route('applicent', auth('member')->user()->id) }}">Applyed</a>
 
-                            {{-- <div class="d-flex justify-content-between text-center mt-5 mb-2">
-                              <div>
-                                  <p class="mb-2 h5 text-white">8471</p>
-                                  <p class="text-muted mb-0" style="color: white !important">Wallets Balance</p>
-                              </div>
-                              <div class="px-3">
-                                  <p class="mb-2 h5 text-white">8512</p>
-                                  <p class="text-muted mb-0 text-white">Income amounts</p>
-                              </div>
-                              <div>
-                                  <p class="mb-2 h5 text-white">4751</p>
-                                  <p class="text-muted mb-0 text-white">Total Transactions</p>
-                              </div>
-                      </div> --}}
+                            
                         </div>
                     </div>
                 </div>

@@ -1,5 +1,5 @@
 <!-- Topbar -->
-<nav class="navbar navbar-expand navbar-light bg-wanr topbar mb-4 static-top shadow">
+<nav class="navbar navbar-expand navbar-light topbar mb-4 static-top shadow pos">
 
     <!-- Topbar Search -->
     {{-- <form class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search ">
@@ -17,14 +17,14 @@
 
     <!-- Nav Item - User Information -->
     <li class="nav-item dropdown no-arrow list-unstyled ml-auto">
-    
+           
             <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown">
                 <span class="mr-2 d-none d-lg-inline font-weight-bold">Admin</span>
                 <img class="img-profile rounded-circle" src="{{ url('/uploads/akash.jpg') }}" alt="img"
                     style="height: auto; width: 37px;">
             </a>
     
-
+        
         <!-- Dropdown - User Information -->
         <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
             {{-- <a class="dropdown-item" href="#">

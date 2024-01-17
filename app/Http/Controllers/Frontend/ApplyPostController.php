@@ -11,7 +11,7 @@ use Illuminate\Http\Request;
 
 class ApplyPostController extends Controller
 {
-    // apply tuition post method...............
+    // apply tuition post method.........................................................
     public function applyNow($postId){ 
         //dd($id); 
         ApplyPost::create([
@@ -54,14 +54,14 @@ class ApplyPostController extends Controller
        return redirect()->back();
     }
 
-    // my post ...........................
+    // my post .........................................................................
     public function myPost($id)
     {
         $myPost=TuitionPost::where('user_id',$id)->get();
         // dd($myPost->all());
         return view('frontend.pages.mypost',compact('myPost'));
     }
-    // request on my post..........................................
+    // request on my post.....................................................................
     public function request($id)
     {
         

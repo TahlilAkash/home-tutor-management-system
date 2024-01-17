@@ -34,7 +34,8 @@ class HomeController extends Controller
         // Determine the user role
         $userRole = optional(auth('member')->user())->role;
 
-        if ($request->search) {
+        if ($request->search) 
+        {
             // When there is a search term
             $query = TuitionPost::where('status', 'approved');
 
@@ -47,6 +48,7 @@ class HomeController extends Controller
 
             // Apply the subject filter
             $relatedposts = $query->where('subject_name', 'LIKE', '%' . $request->search . '%')->get();
+            
         } else {
             // When there is no search term
             // Display all approved posts based on user role

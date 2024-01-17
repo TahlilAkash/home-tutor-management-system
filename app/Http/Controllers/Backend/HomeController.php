@@ -17,6 +17,7 @@ class HomeController extends Controller
         // count the student number in  dashboard
         $countStudent=Member::where('role','student')->get();
         $countTeacher=Member::where('role','teacher')->get();
+        
 
         $countSubject=Subject::all();
         $countClass=Classt::all();

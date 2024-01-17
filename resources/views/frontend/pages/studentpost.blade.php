@@ -64,7 +64,7 @@
         
         <div class="form-group">
             <label for="">Salary: </label>
-            <input required type="number" name="salary" class="form-control" id="salary" placeholder="Salary" min="1000" max="15000">
+            <input required type="number" name="salary" class="form-control" id="salary" placeholder="Salary" min="1" max="10000">
         </div>
 
 

@@ -32,7 +32,7 @@
 
     <div class="form-group">
       <label for="">Upload Your Image: </label>
-      <input value="{{$memprofileVar->image}}" name="image" type="file" class="form-control">
+      <input value="{{$memprofileVar->image}}" name="image" type="file" accept="image/*" class="form-control">
     </div>
 
 

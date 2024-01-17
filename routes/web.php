@@ -42,7 +42,6 @@ Route::get('/about',[FrontendHomeController::class,'about_page'])->name('about.p
 
 Route::get('/registration',[MemberController::class,'registration'])->name('member.registration');
 Route::post('/registration',[MemberController::class, 'store'])->name('member.store');
-
 Route::get('/login',[MemberController::class, 'login'])->name('member.login');
 Route::post('/login',[MemberController::class,'doLogin'])->name('member.do.login');
 

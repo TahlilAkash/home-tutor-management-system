@@ -107,7 +107,7 @@
 
                             <div class="d-flex v-card align-items-center">
                                 <img src="{{ url('/uploads/' . $tpost->image) }}" alt="img"
-                                    style="width: 80px; height: 80px; object-fit: cover;  object-position: top; border: 1px solid rgb(172, 169, 169); border-radius:60%; color:black;">
+                                    style="width: 80px; height: 80px; object-fit: cover;  object-position: top; border: 1px solid rgb(172, 169, 169); border-radius:60%; color:black; ">
                             </div>
                             <h6>Name: {{ $tpost->name }}</h6>
                             <h6>Role: {{ $tpost->role }}</h6>

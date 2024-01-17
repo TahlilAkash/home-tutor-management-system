@@ -10,10 +10,7 @@
                 <tr>
                     <th scope="col">ID</th>
                     <th scope="col">Subject Name</th>
-                    <!-- <th scope="col">Subject Code</th> -->
-                    <th scope="col">Description</th>
-                    <!-- <th scope="col">Class</th>
-                    <th scope="col">Study Hours</th> -->
+                    {{-- <th scope="col">Description</th> --}}
                     <th scope="col">Action</th>
 
                 </tr>
@@ -24,8 +21,7 @@
                         <th scope="row">{{ $key + 1 }}</th>
                         <!-- form name property -->
                         <td>{{ $subject->name }}</td>
-                        {{-- <!-- <td>{{$subject->code}}</td> --> --}}
-                        <td>{{ $subject->description }}</td>
+                        {{-- <td>{{ $subject->description }}</td> --}}
                         <td>
                             <a href="{{ route('subject.edit', $subject->id) }}" class="btn btn-success">Edit</a>
                             <a href="{{ route('subject.delete', $subject->id) }}" class="btn btn-danger">Delete</a>

@@ -1,7 +1,7 @@
 @extends('frontend.master')
 
 @section('content')
-    <div class="container col-3 mt-5 p-2" style="border: 2px solid;">
+    <div class="container col-3 mt-5 p-2 " style="border: 2px solid;">
         {{-- enctype="multipart/form-data" --}}
         <form action="{{ route('member.store') }}" method="post" enctype="multipart/form-data">
             @include('notify::components.notify')
@@ -34,10 +34,10 @@
                 </select>
             </div>
 
-            {{-- <div class="form-group">
+            {{-- <div class="form-group">                  position:relative; left: 250px;
           <label for="">Contact: </label>
           <input type="tel" name="contact" class="form-control" id="" placeholder="Contact">
-        </div>
+        </div>  
       
         <div class="form-group">
             <label for="">Upload Your Image: </label>
@@ -53,7 +53,7 @@
 
             <div class="form-group">
                 <label for="">Upload Your Image: </label>
-                <input name="image" type="file" class="form-control">
+                <input name="image" type="file" accept="image/*" class="form-control">
             </div>
 
 

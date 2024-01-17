@@ -9,12 +9,12 @@
 
             <div style="position: absolute; margin-left: 130px; z-index:30">
                 {{-- @if (auth('member')->check()) --}}
-                    <form action="{{ route('subject.search') }}" method="get">
-                        <input type="text" class="form-control mt-1" style="width: 200px; display: inline-block;"
-                            placeholder="Search by subject.." name="search">
-                        <button type="submit" class="btn btn-success"
-                            style="border: 2px solid; background-color: green; color: white;">Search</button>
-                    </form>
+                <form action="{{ route('subject.search') }}" method="get">
+                    <input type="text" class="form-control mt-1" style="width: 200px; display: inline-block;"
+                        placeholder="Search by subject.." name="search">
+                    <button type="submit" class="btn btn-success"
+                        style="border: 2px solid; background-color: green; color: white;">Search</button>
+                </form>
                 {{-- @endif --}}
             </div>
 
@@ -27,7 +27,8 @@
                     <ul class="site-menu main-menu js-clone-nav ml-auto ">
                         <li><a href="{{ route('home') }}" class="nav-link " style="font-weight: bold;">Home</a></li>
 
-                        <li><a href="{{route('about.page')}}" class="nav-link" style="font-weight: bold;">About</a></li>
+                        <li><a href="{{ route('about.page') }}" class="nav-link" style="font-weight: bold;">About</a>
+                        </li>
 
                         {{-- Buy premium --}}
                         {{-- @if (auth('member')->user())
@@ -66,10 +67,10 @@
 
                             @php
                                 $tutionPostCount = \App\Models\TuitionPost::where('user_id', auth('member')->user()->id)->count();
-                                @endphp
+                            @endphp
 
 
-                            @if (auth('member')->user()->status == 'confirm' && (($tutionPostCount-3)/3)< auth('member')->user()->payment_count)
+                            @if (auth('member')->user()->status == 'confirm' && ($tutionPostCount - 3) / 3 < auth('member')->user()->payment_count)
                                 {{-- Show create post links based on the user's role --}}
                                 @if (auth('member')->user()->role == 'teacher')
                                     <li><a href="{{ route('teacher.create.tuition.post') }}" class="nav-link"
