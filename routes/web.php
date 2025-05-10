@@ -16,8 +16,8 @@ use App\Http\Controllers\Frontend\MemberController;
 use App\Http\Controllers\Frontend\TeacherpostController;//teacher post
 use App\Http\Controllers\Frontend\StudentpostController;// student post
 use App\Http\Controllers\Frontend\PostController; // single post view
-use App\Http\Controllers\Frontend\ApplyPostController;// apply post 
-use App\Http\Controllers\Frontend\MyPostController; // mypost 
+use App\Http\Controllers\Frontend\ApplyPostController;// apply post
+use App\Http\Controllers\Frontend\MyPostController; // mypost
 use App\Http\Controllers\Frontend\BuyPremiumController;
 
 
@@ -36,7 +36,7 @@ use App\Http\Controllers\SslCommerzPaymentController;
 */
 //web site home page
 Route::get('/',[FrontendHomeController::class,'home'])->name('home');
-// about page 
+// about page
 Route::get('/about',[FrontendHomeController::class,'about_page'])->name('about.page');
 
 
@@ -70,12 +70,12 @@ Route::group(['middleware'=>'frontendAuth'],function(){
     //single cart view
     Route::get('/teacher-student/post/singleview/{id}',[PostController::class,'singlePostview'])->name('s_t.post.singleview');
 
-    
+
     //Route::get('/myPost/{id}',[MyPostController::class,'myPost'])->name('myPost');
 
-     
-    
-    
+
+
+
     // I applied on the post  (pendig post)........................
     Route::get('/applicants/{id}',[ApplyPostController::class,'applicent'])->name('applicent');
     //my post
@@ -84,13 +84,13 @@ Route::group(['middleware'=>'frontendAuth'],function(){
 //     Route::get('/my/request/edit/{id}',[ApplyPostController::class,'request_edit'])->name('request.edit');
     Route::get('/my/post/edit/{id}', [ApplyPostController::class, 'edit'])->name('my.post.edit');
     Route::put('/my/post/update/{id}',[ApplyPostController::class, 'update'])->name('my.post.update');
-            //Route::get('/my/post/delete/{id}',[ApplyPostController::class, 'delete'])->name('my.post.delete'); 
+            //Route::get('/my/post/delete/{id}',[ApplyPostController::class, 'delete'])->name('my.post.delete');
 
 
 
     // search option..............................................
     Route::get('/search-subject',[FrontendHomeController::class,'search'])->name('subject.search'); // header blade e serach from
-    
+
    // Buy premium post......................................................................................
     Route::get('/buy-premium',[BuyPremiumController::class, 'buyPremium'])->name('buyPremium.post');
     Route::get('/buy/subscription/{id}',[BuyPremiumController::class, 'subscriptionPurchase'])->name('buy.subscription');
@@ -121,19 +121,19 @@ Route::post('/login-form-post', [UserController::class, 'loginPost'])->name('adm
 
 
 Route::group(['middleware' => 'auth'], function () {
-        
+
         // admin
         Route::get('/logout',[UserController::class, 'logout'])->name('admin.logout');
         Route::get('/', [HomeController::class, 'Home'])->name('admin.dashboard');
-        //Admin dashboard to count in small 
-        
+        //Admin dashboard to count in small
+
 
         // user=member...................................................................
         Route::get('/users',[UserController::class, 'list'])->name('user.list');
         Route::get('/users/delete/{id}', [UserController::class, 'delete_user'])->name('user.delete');
         Route::get('/users/edit/{id}', [UserController::class, 'edit_user'])->name('user.edit');
         Route::put('/users/update/{id}',[UserController::class, 'update_user'])->name('user.update');
-        
+
         Route::get('/users/create',[UserController::class, 'createForm'])->name('users.Formcreate');
         Route::post('/users/store',[UserController::class, 'store'])->name('users.store');
 
@@ -145,19 +145,19 @@ Route::group(['middleware' => 'auth'], function () {
                 // student post edit is attach with teacher/student url in teacher controller
                  // Route::get('/studentlist/edit/{id}', [StudentController::class, 'edit'])->name('studentlist.edit');
                  // Route::put('/studentlist/update/{id}',[StudentController::class, 'update'])->name('studentlist.update');
-        
-        
+
+
         // admin panel teacher post list...............................
         Route::get('/teacherlist', [TeacherController::class, 'Teacherlist'])->name('teacher.list');
         // here teacher & student post edit= approved by admin
         Route::get('/teacherlist/delete/{id}',[TeacherController::class,'delete'])->name('teacherlist.delete');
         Route::get('/teacherlist/studentlist/edit/{id}', [TeacherController::class, 'edit'])->name('teacherlist.edit');
         Route::put('/teacherlist/stedentlist/update/{id}',[TeacherController::class, 'update'])->name('teacherlist.update');
-       
+
 
         // subject...................................................................
         Route::get('/subject/list', [SubjectController::class, 'Subject'])->name('subject.list');
-        
+
         Route::get('/subject/delete/{id}', [SubjectController::class, 'delete'])->name('subject.delete');
         Route::get('/subject/edit/{id}', [SubjectController::class, 'edit'])->name('subject.edit');
         Route::put('/subject/update/{id}', [SubjectController::class, 'update'])->name('subject.update');
@@ -186,9 +186,9 @@ Route::group(['middleware' => 'auth'], function () {
 
         // Route::get('/tuition/list', [TuitionController::class, 'Tuition_list'])->name('tuition.list');
         // Route::get('/tuition/form', [TuitionController::class, 'Tuition_form'])->name('tuition.form');
-    
+
         // Route::post('/tuition/store', [TuitionController::class, 'Tuition_store'])->name('tuition.store');
- 
+
 });
 
 });

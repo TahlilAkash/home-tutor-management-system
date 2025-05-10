@@ -164,7 +164,7 @@ class SslCommerzPaymentController extends Controller
     {
         // dd();
         // echo "Transaction is Successful";
-        
+
 
         $tran_id = $request->input('tran_id');
         $amount = $request->input('amount');
